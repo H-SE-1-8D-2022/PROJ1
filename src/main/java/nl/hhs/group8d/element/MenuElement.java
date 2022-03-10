@@ -1,5 +1,7 @@
 package nl.hhs.group8d.element;
 
+import java.util.List;
+
 public class MenuElement implements Element {
     private List<ButtonElement> buttons;
 
