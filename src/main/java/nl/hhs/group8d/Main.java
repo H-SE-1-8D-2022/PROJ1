@@ -5,6 +5,5 @@ public class Main {
         System.out.println("Hello World!");
 
         System.out.println("commit test");
-        System.out.println("another test");
     }
 }
