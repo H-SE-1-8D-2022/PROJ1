@@ -1,10 +1,19 @@
 package nl.hhs.group8d;
 
+import nl.hhs.group8d.scherm.Scherm;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        new Main().run();
+    }
 
-        System.out.println("commit test");
-        System.out.println("commit test2");
+    private Scherm huidigeScherm;
+
+    private Main() {
+
+    }
+
+    private void run() {
+        System.out.println("Hello World!");
     }
 }
