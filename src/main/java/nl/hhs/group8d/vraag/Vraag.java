@@ -1,13 +1,20 @@
 package nl.hhs.group8d.vraag;
 
-public abstract class Vraag {
-    private String vraag;
-    private String antwoord;
+public class Vraag {
 
-    protected Vraag(String vraag, String antwoord) {
+    private String vraag;
+    private String correcteAntwoord;
+
+    public Vraag(String vraag, String correcteAntwoord) {
         this.vraag = vraag;
-        this.antwoord = antwoord;
+        this.correcteAntwoord = correcteAntwoord;
     }
 
-    abstract boolean isCorrect(String antwoordGegeven);
+    public String getVraag() {
+        return vraag;
+    }
+
+    public String getCorrecteAntwoord() {
+        return correcteAntwoord;
+    }
 }
