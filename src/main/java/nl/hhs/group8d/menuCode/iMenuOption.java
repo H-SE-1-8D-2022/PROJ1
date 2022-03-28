@@ -6,7 +6,7 @@ public interface iMenuOption {
 
     String getTitle();
 
-    default Submenu getNextSubMenu() {
+    default Menu getNextSubMenu() {
         return null;
     }
 

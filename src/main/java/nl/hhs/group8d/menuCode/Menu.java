@@ -2,15 +2,15 @@ package nl.hhs.group8d.menuCode;
 
 import java.util.ArrayList;
 
-public class Submenu {
+public class Menu {
 
     private ArrayList<iMenuOption> menuOptions = new ArrayList<>();
 
-    public Submenu(){
+    public Menu(){
         this.menuOptions = new ArrayList<>();
     }
 
-    public Submenu(ArrayList menuOptions){
+    public Menu(ArrayList menuOptions){
         setMenuOptions(menuOptions);
     }
 
