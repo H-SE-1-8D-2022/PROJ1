@@ -1,6 +1,9 @@
 package nl.hhs.group8d.menuCode.menus.Examen;
 
+import nl.hhs.group8d.vraag.Vraag;
+
 import java.util.ArrayList;
+import java.util.Collection;
 
 public abstract class Examen
 {
@@ -35,5 +38,9 @@ public abstract class Examen
     public static ArrayList<Examen> getExamens()
     {
         return examens;
+    }
+
+    public ArrayList<Vraag> getVragen() {
+        return null;
     }
 }
