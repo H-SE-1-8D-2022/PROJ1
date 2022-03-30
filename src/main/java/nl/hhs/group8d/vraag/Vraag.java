@@ -1,6 +1,6 @@
 package nl.hhs.group8d.vraag;
 
-public class Vraag {
+public abstract class Vraag {
 
     private String vraag;
     private String correcteAntwoord;
@@ -17,4 +17,8 @@ public class Vraag {
     public String getCorrecteAntwoord() {
         return correcteAntwoord;
     }
+
+    public abstract void printVraag();
+
+    public abstract boolean isCorrect(String antwoord);
 }
