@@ -6,6 +6,7 @@ import nl.hhs.group8d.menuCode.menus.Examen.AfnemenExamenMenuOption;
 import nl.hhs.group8d.menuCode.menus.Examen.LijstMetExamenMenuOption;
 
 public class ExamenMenuOption implements iMenuOption {
+
     @Override
     public String getTitle() {
         return "Examen";
@@ -18,4 +19,6 @@ public class ExamenMenuOption implements iMenuOption {
         menu.add(new LijstMetExamenMenuOption());
         return menu;
     }
+
+
 }

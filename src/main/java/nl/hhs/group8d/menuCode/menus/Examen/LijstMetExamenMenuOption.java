@@ -13,16 +13,5 @@ public class LijstMetExamenMenuOption implements iMenuOption {
     @Override
     public void executeMenuOption() {
 
-        System.out.println("""
-                
-                fdslf das
-                dsf asdf d 
-                          dsfadsfd saf dsf 
-                          
-                """);
-
-        Scanner scanner = new Scanner(System.in);
-        scanner.nextInt();
-
     }
 }

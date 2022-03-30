@@ -10,6 +10,6 @@ public class StudentVerwijderenMenuOption implements iMenuOption {
 
     @Override
     public void executeMenuOption() {
-        iMenuOption.super.executeMenuOption();
+
     }
 }

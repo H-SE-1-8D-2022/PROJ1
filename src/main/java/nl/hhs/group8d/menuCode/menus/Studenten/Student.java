@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Student {
     private String naam;
     private int studentNummer;
-    private static ArrayList<Student> studentenLijst = new ArrayList<Student>();
+    private static ArrayList<Student> studentenLijst = new ArrayList<>();
 
 
 

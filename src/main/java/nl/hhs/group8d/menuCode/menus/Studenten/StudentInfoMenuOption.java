@@ -12,10 +12,6 @@ public class StudentInfoMenuOption implements iMenuOption {
 
     @Override
     public void executeMenuOption() {
-        System.out.println("Hier komt student informatie te staan");
 
-        Scanner scanner = new Scanner(System.in);
-
-        scanner.nextLine();
     }
 }

@@ -12,15 +12,9 @@ public class StudentenLijstMenuOption implements iMenuOption {
     }
 
     @Override
-    public Menu getNextSubMenu() {
-        Menu menu = new Menu();
-        menu.add(new ExamenMenuOption());
-        menu.add(new AfnemenExamenMenuOption());
-        menu.add(new StudentVerwijderenMenuOption());
-        return menu;
-    }
-
-    @Override
     public void executeMenuOption(){
+
+
+
     }
 }

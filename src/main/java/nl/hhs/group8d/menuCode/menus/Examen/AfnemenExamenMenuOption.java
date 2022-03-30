@@ -10,6 +10,6 @@ public class AfnemenExamenMenuOption implements iMenuOption {
 
     @Override
     public void executeMenuOption() {
-        iMenuOption.super.executeMenuOption();
+
     }
 }
