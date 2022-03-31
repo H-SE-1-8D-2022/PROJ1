@@ -17,17 +17,17 @@ public class StudentenLijstMenuOption extends MenuOption {
     public void executeMenuOption(){
 
 
-//        this.studentenLijst = getStudentenLijst();
-//
-//        printStudenten();
-//
-//        processInput(getUserInput());
+        this.studentenLijst = getStudentenLijst();
+
+        printStudenten();
+
+        processInput(getUserInput());
 
     }
 
     private ArrayList<Student> getStudentenLijst(){
-        //return Student.getStudentenLijst();
-        return null;
+        return Student.getStudentenLijst();
+
     }
 
     private void processInput(int input){
@@ -46,7 +46,7 @@ public class StudentenLijstMenuOption extends MenuOption {
                 if(index < 0 || index > studentenLijst.size()){
                     System.out.println("Please enter a valid input.");
                 } else {
-                    return getScanner().nextInt();
+                    return index;
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Please enter a valid number.");
