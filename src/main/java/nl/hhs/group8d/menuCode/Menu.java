@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class Menu {
 
-    private ArrayList<iMenuOption> menuOptions;
+    private ArrayList<MenuOption> menuOptions;
 
     public Menu(){
         this.menuOptions = new ArrayList<>();
     }
 
-    public ArrayList<iMenuOption> getMenuOptions() {
+    public ArrayList<MenuOption> getMenuOptions() {
         return menuOptions;
     }
 
-    public void add(iMenuOption menuOption){
+    public void add(MenuOption menuOption){
         this.menuOptions.add(menuOption);
     }
 

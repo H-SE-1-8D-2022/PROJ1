@@ -1,11 +1,11 @@
 package nl.hhs.group8d.menuCode.menus;
 
 import nl.hhs.group8d.menuCode.Menu;
-import nl.hhs.group8d.menuCode.iMenuOption;
+import nl.hhs.group8d.menuCode.MenuOption;
 import nl.hhs.group8d.menuCode.menus.Examen.AfnemenExamenMenuOption;
 import nl.hhs.group8d.menuCode.menus.Examen.LijstMetExamenMenuOption;
 
-public class ExamenMenuOption implements iMenuOption {
+public class ExamenMenuOption extends MenuOption {
 
     @Override
     public String getTitle() {

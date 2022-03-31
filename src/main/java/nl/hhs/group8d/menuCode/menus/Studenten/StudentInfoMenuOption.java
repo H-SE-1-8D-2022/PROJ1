@@ -1,10 +1,8 @@
 package nl.hhs.group8d.menuCode.menus.Studenten;
 
-import nl.hhs.group8d.menuCode.iMenuOption;
+import nl.hhs.group8d.menuCode.MenuOption;
 
-import java.util.Scanner;
-
-public class StudentInfoMenuOption implements iMenuOption {
+public class StudentInfoMenuOption extends MenuOption {
     @Override
     public String getTitle() {
         return "Student Informatie.";

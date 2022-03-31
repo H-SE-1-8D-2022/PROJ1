@@ -1,6 +1,6 @@
 package nl.hhs.group8d.menuCode;
 
-public class TextMenuOption implements iMenuOption {
+public class TextMenuOption extends MenuOption {
 
     private String title;
 

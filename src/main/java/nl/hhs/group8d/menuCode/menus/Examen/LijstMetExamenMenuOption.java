@@ -1,10 +1,8 @@
 package nl.hhs.group8d.menuCode.menus.Examen;
 
-import nl.hhs.group8d.menuCode.iMenuOption;
+import nl.hhs.group8d.menuCode.MenuOption;
 
-import java.util.Scanner;
-
-public class LijstMetExamenMenuOption implements iMenuOption {
+public class LijstMetExamenMenuOption extends MenuOption {
     @Override
     public String getTitle() {
         return "Lijst met Examens.";
