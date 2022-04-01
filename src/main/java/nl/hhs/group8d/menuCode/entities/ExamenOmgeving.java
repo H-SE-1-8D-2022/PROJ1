@@ -36,9 +36,10 @@ public class ExamenOmgeving {
         vraag.printVraag();
         String antwoord = krijgAntwoord();
         if (vraag.isCorrect(antwoord)) {
+            System.out.println("Correct!");
             aantalCorrect++;
         } else {
-            //todo: code om te zeggen wat het goeie antwoord was.
+            System.out.println("Fout, het correcte antwoord was: " + vraag.getCorrecteAntwoord());
         }
     }
 
