@@ -38,7 +38,8 @@ public class Student {
         return studentenLijst;
     }
 
-//    public void addGemaakteExamen(Examen : examenResultaten){
+//    public void addGemaakteExamen(examenResultaten : ExamenResultaten){
+
 //      todo: do stuff
 //    }
 
