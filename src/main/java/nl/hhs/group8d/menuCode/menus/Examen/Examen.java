@@ -12,12 +12,11 @@ public  class Examen
     public static ArrayList<Examen> examens;
     private ArrayList<Vraag> vragen;
 
-    public Examen(String name, Integer aantalCorrectNodig, ArrayList<Examen> examensN,ArrayList<Vraag> vragenN)
+    public Examen(String name, Integer aantalCorrectNodig,ArrayList<Vraag> vragenN)
     {
         this.name = name;
         this.aantalCorrectNodig = aantalCorrectNodig;
         this.vragen = vragenN;
-        examens = examensN;
     }
 
     public void setName(String name)
