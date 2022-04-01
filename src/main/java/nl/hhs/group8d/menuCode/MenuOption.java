@@ -38,6 +38,7 @@ public abstract class MenuOption {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Vul alstublieft een geldig getal in.");
+                scanner.nextLine();
             }
         }
 
