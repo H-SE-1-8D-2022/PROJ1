@@ -2,12 +2,13 @@ package nl.hhs.group8d.menuCode.menus.Studenten;
 
 
 import java.io.*;
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class Student {
     private String naam;
     private int studentNummer;
-    private static ArrayList<Student> studentenLijst = new ArrayList<>();
+    public final static ArrayList<Student> studentenLijst = getStudentenLijst();
 
 
     public Student(String naam, int studentNummer){
@@ -15,21 +16,10 @@ public class Student {
         this.studentNummer = studentNummer;
     }
 
-    public Student(){}
-
-
-    public void studentAdd(Student student){
-        studentenLijst.add(student);
-    }
-    public void studentRemove(Student student){
-        studentenLijst.remove(student);
-    }
-
-    public static ArrayList<Student> getStudentenLijst(){
+    private static ArrayList<Student> getStudentenLijst(){
         int stnummer;
-        if(studentenLijst.size() > 0){
-            return studentenLijst;
-        }
+        ArrayList<Student> studentenLijst = new ArrayList<>();
+
         try(BufferedReader in = new BufferedReader(new FileReader("Student.txt"))){
             String regel;
             while ((regel = in.readLine()) != null) {
@@ -46,9 +36,8 @@ public class Student {
     }
 
 //    public void addGemaakteExamen(Examen : examenResultaten){
-//
+//      todo: do stuff
 //    }
-
 
     @Override
     public String toString() {

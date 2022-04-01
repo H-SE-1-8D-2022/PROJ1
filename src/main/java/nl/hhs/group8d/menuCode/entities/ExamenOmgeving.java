@@ -37,6 +37,8 @@ public class ExamenOmgeving {
         String antwoord = krijgAntwoord();
         if (vraag.isCorrect(antwoord)) {
             aantalCorrect++;
+        } else {
+            //todo: code om te zeggen wat het goeie antwoord was.
         }
     }
 
