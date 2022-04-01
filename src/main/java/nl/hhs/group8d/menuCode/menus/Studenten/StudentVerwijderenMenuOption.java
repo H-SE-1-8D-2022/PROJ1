@@ -52,6 +52,8 @@ public class StudentVerwijderenMenuOption extends MenuOption {
             }
         }
 
-        System.out.println("Student: " + st.getNaam() + " met het nummer: " + st.getstudentNummer() +  " verwijderd.");
+        System.out.println("Student: " + st.getNaam() + " met het nummer: " + st.getstudentNummer() +  " is verwijderd.");
+        System.out.println("0. exit");
+        getUserStringInput();
     }
 }

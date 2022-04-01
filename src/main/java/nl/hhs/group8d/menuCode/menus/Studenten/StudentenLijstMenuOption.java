@@ -30,6 +30,8 @@ public class StudentenLijstMenuOption extends MenuOption {
             return;
         } else {
             printStudent(input - 1);
+
+            //Make the user say something before returning to the menu.
             getUserIntInput();
         }
     }
