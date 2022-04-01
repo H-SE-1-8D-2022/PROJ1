@@ -5,42 +5,39 @@ import nl.hhs.group8d.vraag.Vraag;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public abstract class Examen
+public  class Examen
 {
     private String name;
     private Integer aantalCorrectNodig;
-    private static ArrayList<Examen> examens = addExamens();
+    public static ArrayList<Examen> examens;
+    private ArrayList<Vraag> vragen;
 
-    public Examen(String name, Integer aantalCorrectNodig)
+    public Examen(String name, Integer aantalCorrectNodig, ArrayList<Examen> examensN,ArrayList<Vraag> vragenN)
     {
         this.name = name;
-        this.aantalCorrectNodig =aantalCorrectNodig;
+        this.aantalCorrectNodig = aantalCorrectNodig;
+        this.vragen = vragenN;
+        examens = examensN;
     }
 
+    public void setName(String name)
+    {this.name = name;}
     public String getName()
-    {
-        return name;
-    }
+    {return name;}
 
+    public void setAantalCorrectNodig(Integer aantalCorrectNodig)
+    {this.aantalCorrectNodig = aantalCorrectNodig;}
     public Integer getAantalCorrectNodig()
-    {
-        return aantalCorrectNodig;
-    }
+    {return this.aantalCorrectNodig;}
 
-    private static ArrayList<Examen> addExamens()
-    {
-        ArrayList<Examen> ex = new ArrayList<>();
-        ex.add(new WiskundeExamen());
-        ex.add(new ScheikundeExamen());
-        return ex;
-    }
 
+    public static void setExamens(ArrayList<Examen> examens)
+    {Examen.examens = examens;}
     public static ArrayList<Examen> getExamens()
-    {
-        return examens;
-    }
+    {return examens;}
 
-    public ArrayList<Vraag> getVragen() {
-        return null;
-    }
+    public void setVragen(ArrayList<Vraag> vragen)
+    {this.vragen = vragen;}
+    public ArrayList<Vraag> getVragen()
+    {return vragen;}
 }
