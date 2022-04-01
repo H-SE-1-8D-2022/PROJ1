@@ -1,6 +1,8 @@
 package nl.hhs.group8d.menuCode.menus.Studenten;
 
 
+import nl.hhs.group8d.menuCode.menus.Examen.Examen;
+
 import java.io.*;
 import java.sql.Array;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ public class Student {
     private String naam;
     private int studentNummer;
     public final static ArrayList<Student> studentenLijst = getStudentenLijst();
+    public final static String BESTAND = "Student.txt";
 
 
     public Student(String naam, int studentNummer){
@@ -20,7 +23,7 @@ public class Student {
         int stnummer;
         ArrayList<Student> studentenLijst = new ArrayList<>();
 
-        try(BufferedReader in = new BufferedReader(new FileReader("Student.txt"))){
+        try(BufferedReader in = new BufferedReader(new FileReader(Student.BESTAND))){
             String regel;
             while ((regel = in.readLine()) != null) {
                 String[] woorden = regel.split(",");
