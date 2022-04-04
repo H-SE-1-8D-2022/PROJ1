@@ -29,12 +29,11 @@ public  class Examen
     public Integer getAantalCorrectNodig()
     {return this.aantalCorrectNodig;}
 
-
     public static void setExamens(ArrayList<Examen> examens)
     {Examen.examens = examens;}
     public static ArrayList<Examen> getExamens()
     {return examens;}
-
+    
     public void setVragen(ArrayList<Vraag> vragen)
     {this.vragen = vragen;}
     public ArrayList<Vraag> getVragen()
