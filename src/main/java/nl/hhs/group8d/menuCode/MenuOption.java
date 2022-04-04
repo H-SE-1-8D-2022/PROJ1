@@ -9,12 +9,10 @@ public abstract class MenuOption {
 
     public abstract String getTitle();
 
+    public abstract void executeMenuOption();
+
     public Menu getNextSubMenu() {
         return null;
-    }
-
-    public void executeMenuOption() {
-        //todo: override
     }
 
     protected Scanner getScanner(){
