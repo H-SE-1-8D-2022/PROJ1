@@ -17,10 +17,12 @@ public abstract class Vraag
     {
         return this.vraag;
     }
+
     public String getCorrecteAntwoord() {
         return this.correcteAntwoord;
     }
 
     public abstract void printVraag();
+
     public abstract boolean isCorrect(String antwoord);
 }
