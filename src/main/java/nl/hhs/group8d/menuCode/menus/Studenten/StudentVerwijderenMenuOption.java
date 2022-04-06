@@ -35,8 +35,8 @@ public class StudentVerwijderenMenuOption extends MenuOption {
         return false;
     }
 
-    private void verwijderStudent(Student st){
-        Student.studentenLijst.remove(st);
+    private void verwijderStudent(Student student){
+        Student.studentenLijst.remove(student);
         try(PrintWriter writer = new PrintWriter(Student.BESTAND))
         {writer.print("");        } catch (Exception e) {
             e.printStackTrace();
@@ -52,7 +52,7 @@ public class StudentVerwijderenMenuOption extends MenuOption {
             }
         }
 
-        System.out.println("Student: " + st.getNaam() + " met het nummer: " + st.getstudentNummer() +  " is verwijderd.");
+        System.out.println("Student: " + student.getNaam() + " met het nummer: " + student.getstudentNummer() +  " is verwijderd.");
         System.out.println("0. exit");
         getUserStringInput();
     }

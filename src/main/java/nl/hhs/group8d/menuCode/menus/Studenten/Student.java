@@ -1,10 +1,10 @@
 package nl.hhs.group8d.menuCode.menus.Studenten;
 
 
-import nl.hhs.group8d.menuCode.menus.Examen.Examen;
+import nl.hhs.group8d.menuCode.entities.ExamenResultaten;
+
 
 import java.io.*;
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class Student {
@@ -38,10 +38,19 @@ public class Student {
         return studentenLijst;
     }
 
-//    public void addGemaakteExamen(examenResultaten : ExamenResultaten){
+  public  static void addGemaakteExamen(ExamenResultaten examenResultaat){
+      File bestand = new File("Studentenlijst");
+      bestand.mkdir();
+      try(FileWriter fw = new FileWriter("Studentenlijst/" + examenResultaat.getStudent().getstudentNummer() + ".txt", true);
+          BufferedWriter bw = new BufferedWriter(fw);
+          PrintWriter pw = new PrintWriter(bw)){
+          pw.println(examenResultaat.getExamen().getName() + "," + examenResultaat.getAantalCorrect());
+          System.out.println("Examen toegevoegd");
+      } catch (Exception e) {
+          e.printStackTrace();
+      }
+  }
 
-//      todo: do stuff
-//    }
 
     @Override
     public String toString() {

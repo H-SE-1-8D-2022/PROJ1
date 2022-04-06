@@ -12,4 +12,9 @@ public class TextMenuOption extends MenuOption {
     public TextMenuOption(String title){
         this.title = title;
     }
+
+    @Override
+    public void executeMenuOption() {
+
+    }
 }

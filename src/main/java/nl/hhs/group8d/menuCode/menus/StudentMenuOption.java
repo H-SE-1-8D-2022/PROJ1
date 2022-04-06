@@ -13,6 +13,7 @@ public class StudentMenuOption extends MenuOption {
         return "Studenten";
     }
 
+
     @Override
     public Menu getNextSubMenu() {
         Menu menu = new Menu();
@@ -23,5 +24,11 @@ public class StudentMenuOption extends MenuOption {
 
         return menu;
     }
+
+    @Override
+    public void executeMenuOption() {
+
+    }
+
 
 }
