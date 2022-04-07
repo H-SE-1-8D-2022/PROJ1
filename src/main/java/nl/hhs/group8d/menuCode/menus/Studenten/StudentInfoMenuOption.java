@@ -13,31 +13,25 @@ public class StudentInfoMenuOption extends MenuOption {
 
     @Override
     public void executeMenuOption() {
-        getStudentInfo();
-
     }
 
-    public int vraagStudentNummer(){
-        System.out.println("Van welke student wil je de gegevens zien:");
-        return getUserIntInput();
-    }
 
-    public void getStudentInfo(){
-        int nummer = vraagStudentNummer();
-        System.out.println("Gemaakte examens: ");
+    public void getStudentInfo(int nummer){
+        if(nummer == 0){
+            return;
+        }
         try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))){
             String regel;
+            System.out.println("Gemaakte examens: ");
             while ((regel = in.readLine()) != null) {
                 String[] woorden = regel.split(",");
                 String examenNaam = woorden[0];
                 int aantalCorrect = Integer.parseInt(woorden[1]);
                 System.out.println("Examennaam: " + examenNaam + ", aantal correct: " + aantalCorrect);
             }
-            System.out.println("0. exit");
-            getUserStringInput();
+
         }catch(Exception e){
-            System.out.println("Vul een geldig studentnummer in!");;
-            getStudentInfo();
+            System.out.println("Deze student heeft nog geen examens gemaakt.");
         }
     }
 }

@@ -20,6 +20,7 @@ public class StudentenLijstMenuOption extends MenuOption {
         this.studentenLijst = Student.studentenLijst;
 
         printStudenten();
+        System.out.print("Van welke student wil je de info zien: ");
 
         processInput( getUserIntInput(0, studentenLijst.size()) );
 
@@ -43,6 +44,7 @@ public class StudentenLijstMenuOption extends MenuOption {
             System.out.print(i+++". ");
             System.out.print(student.getstudentNummer());
             System.out.println(" ("+student.getNaam()+")");
+
         }
 
         System.out.println("0. Exit");
@@ -52,8 +54,10 @@ public class StudentenLijstMenuOption extends MenuOption {
     private void printStudent(int index){
         Student student = studentenLijst.get(index);
 
-        System.out.println(student.getNaam());
-        System.out.println(student.getstudentNummer());
+        System.out.println("Naam: " + student.getNaam());
+        System.out.println("Studentnummer: " + student.getstudentNummer());
+        StudentInfoMenuOption sti = new StudentInfoMenuOption();
+        sti.getStudentInfo(student.getstudentNummer());
         System.out.println("0. exit");
         getScanner().nextLine();
     }

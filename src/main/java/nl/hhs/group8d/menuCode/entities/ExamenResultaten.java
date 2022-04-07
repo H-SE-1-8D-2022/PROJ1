@@ -14,19 +14,21 @@ public class ExamenResultaten {
         this.aantalCorrect = aantalCorrect;
     }
 
-    public boolean heeftGehaald() {
-        return aantalCorrect >= examen.getAantalCorrectNodig();
-    }
 
     public Student getStudent() {
         return student;
+    }
+
+    public int getAantalCorrect() {
+        return aantalCorrect;
     }
 
     public Examen getExamen() {
         return examen;
     }
 
-    public int getAantalCorrect() {
-        return aantalCorrect;
+    public boolean heeftGehaald() {
+        return aantalCorrect >= examen.getAantalCorrectNodig();
     }
 }
+

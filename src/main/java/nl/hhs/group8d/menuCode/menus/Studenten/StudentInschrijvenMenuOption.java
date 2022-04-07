@@ -19,10 +19,17 @@ public class StudentInschrijvenMenuOption extends MenuOption {
     }
 
     private void vraagStudentInfo() {
+        System.out.println("Als je wilt stoppen met student aanmaken type 0");
         System.out.println("Wat is je naam?");
         String naam = getUserStringInput();
+        if(naam.equals("0")){
+            return;
+        }
         System.out.println("Wat is je studentennummer?");
         int studentNummer = getUserIntInput(0, 99999999);
+        if(studentNummer == 0){
+            return;
+       }
         boolean geldigStudentNummer = true;
         for(Student student : Student.studentenLijst){
             if(student.getstudentNummer() == studentNummer){
