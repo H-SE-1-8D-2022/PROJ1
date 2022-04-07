@@ -20,12 +20,12 @@ public class StudentInschrijvenMenuOption extends MenuOption {
 
     private void vraagStudentInfo() {
         System.out.println("Als je wilt stoppen met student aanmaken type 0");
-        System.out.println("Wat is je naam?");
+        System.out.print("Vul je naam in: ");
         String naam = getUserStringInput();
         if(naam.equals("0")){
             return;
         }
-        System.out.println("Wat is je studentennummer?");
+        System.out.print("Vul je studentnummer in: ");
         int studentNummer = getUserIntInput(0, 99999999);
         if(studentNummer == 0){
             return;
