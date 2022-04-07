@@ -30,4 +30,16 @@ public class ExamenResultaten {
     public boolean heeftGehaald() {
         return aantalCorrect >= examen.getAantalCorrectNodig();
     }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public Examen getExamen() {
+        return examen;
+    }
+
+    public int getAantalCorrect() {
+        return aantalCorrect;
+    }
 }
