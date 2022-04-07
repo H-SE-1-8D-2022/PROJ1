@@ -3,7 +3,7 @@ package nl.hhs.group8d;
 import nl.hhs.group8d.menuCode.menus.Studenten.Student;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentInschrijvenMenuOption;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentVerwijderenMenuOption;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;

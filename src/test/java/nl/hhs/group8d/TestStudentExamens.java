@@ -5,7 +5,7 @@ import nl.hhs.group8d.menuCode.menus.Examen.Examen;
 import nl.hhs.group8d.menuCode.menus.Studenten.Student;
 import nl.hhs.group8d.vraag.OpenVragen;
 import nl.hhs.group8d.vraag.Vraag;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
