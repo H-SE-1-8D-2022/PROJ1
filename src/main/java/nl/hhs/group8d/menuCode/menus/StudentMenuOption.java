@@ -17,7 +17,6 @@ public class StudentMenuOption extends MenuOption {
     @Override
     public Menu getNextSubMenu() {
         Menu menu = new Menu();
-        menu.add(new StudentInfoMenuOption());
         menu.add(new StudentenLijstMenuOption());
         menu.add(new StudentInschrijvenMenuOption());
         menu.add(new StudentVerwijderenMenuOption());
