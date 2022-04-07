@@ -1,5 +1,8 @@
-package nl.hhs.group8d.menuCode.menus.Studenten;
+package nl.hhs.group8d;
 
+import nl.hhs.group8d.menuCode.menus.Studenten.Student;
+import nl.hhs.group8d.menuCode.menus.Studenten.StudentInschrijvenMenuOption;
+import nl.hhs.group8d.menuCode.menus.Studenten.StudentVerwijderenMenuOption;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;

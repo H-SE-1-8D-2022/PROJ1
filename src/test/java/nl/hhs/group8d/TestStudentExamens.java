@@ -1,7 +1,8 @@
-package nl.hhs.group8d.menuCode.menus.Studenten;
+package nl.hhs.group8d;
 
 import nl.hhs.group8d.menuCode.entities.ExamenResultaten;
 import nl.hhs.group8d.menuCode.menus.Examen.Examen;
+import nl.hhs.group8d.menuCode.menus.Studenten.Student;
 import nl.hhs.group8d.vraag.OpenVragen;
 import nl.hhs.group8d.vraag.Vraag;
 import org.junit.Test;
