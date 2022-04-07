@@ -34,8 +34,8 @@ public class TestStudentToevoegenEnVerwijderen {
     }
 
     @Test
-    public void productVerwijderen(){
-        String input = "147852\n0\n";
+    public void studentVerwijderen(){
+        String input = Student.studentenLijst.size() + "\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
 
