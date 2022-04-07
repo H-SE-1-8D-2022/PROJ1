@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
         opties.add("Drie");
         opties.add("twee");
         opties.add("Acht");
-        MultipleChoiceVraag m1 = new MultipleChoiceVraag("Hoeveel hoeken heeft een kubus?", "Acht", opties);
+        MultipleChoiceVraag m1 =  new MultipleChoiceVraag("Hoeveel hoeken heeft een kubus?", "Acht", opties);
         m1.printVraag();
         String antwoord = "C";
         assertTrue(m1.isCorrect(antwoord));
