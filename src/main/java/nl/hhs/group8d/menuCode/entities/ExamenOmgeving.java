@@ -6,6 +6,7 @@ import nl.hhs.group8d.vraag.Vraag;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ExamenOmgeving {
@@ -49,5 +50,17 @@ public class ExamenOmgeving {
 
     public ExamenResultaten getResultaten() {
         return new ExamenResultaten(student, examen, aantalCorrect);
+    }
+
+    // Alleen voor tests
+    public void startExamenRandom(Random random) {
+        randomizeVragenRandom(random);
+        for (Vraag vraag : vragen) {
+            stelVraag(vraag);
+        }
+    }
+
+    private void randomizeVragenRandom(Random random) {
+        Collections.shuffle(vragen, random);
     }
 }

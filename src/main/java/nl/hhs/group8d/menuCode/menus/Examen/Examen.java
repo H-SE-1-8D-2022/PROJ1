@@ -4,15 +4,16 @@ import nl.hhs.group8d.vraag.Vraag;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public  class Examen
 {
     private String name;
     private Integer aantalCorrectNodig;
     public static ArrayList<Examen> examens;
-    private ArrayList<Vraag> vragen;
+    private List<Vraag> vragen;
 
-    public Examen(String name, Integer aantalCorrectNodig,ArrayList<Vraag> vragenN)
+    public Examen(String name, Integer aantalCorrectNodig, List<Vraag> vragenN)
     {
         this.name = name;
         this.aantalCorrectNodig = aantalCorrectNodig;
@@ -34,8 +35,8 @@ public  class Examen
     public static ArrayList<Examen> getExamens()
     {return examens;}
     
-    public void setVragen(ArrayList<Vraag> vragen)
+    public void setVragen(List<Vraag> vragen)
     {this.vragen = vragen;}
-    public ArrayList<Vraag> getVragen()
+    public List<Vraag> getVragen()
     {return vragen;}
 }

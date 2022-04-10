@@ -1,10 +1,10 @@
 package nl.hhs.group8d.vraag;
 
-public class OpenVragen extends Vraag
+public class OpenVraag extends Vraag
 {
 
 
-    public OpenVragen(String vraag, String correcteAntwoord)
+    public OpenVraag(String vraag, String correcteAntwoord)
     {
         super(vraag, correcteAntwoord);
     }

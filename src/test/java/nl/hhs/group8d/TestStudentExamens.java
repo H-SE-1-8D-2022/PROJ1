@@ -3,7 +3,7 @@ package nl.hhs.group8d;
 import nl.hhs.group8d.menuCode.entities.ExamenResultaten;
 import nl.hhs.group8d.menuCode.menus.Examen.Examen;
 import nl.hhs.group8d.menuCode.menus.Studenten.Student;
-import nl.hhs.group8d.vraag.OpenVragen;
+import nl.hhs.group8d.vraag.OpenVraag;
 import nl.hhs.group8d.vraag.Vraag;
 import org.junit.jupiter.api.Test;
 
@@ -19,8 +19,8 @@ public class TestStudentExamens {
         int nummer = 123248567;
         Student student = new Student("Stephan", nummer);
         ArrayList<Vraag> vragenLijst = new ArrayList<>();
-        Vraag vraag = new OpenVragen("Hoeveel is 10x10", "100");
-        Vraag vraag2 = new OpenVragen("Wat is 5+5", "10");
+        Vraag vraag = new OpenVraag("Hoeveel is 10x10", "100");
+        Vraag vraag2 = new OpenVraag("Wat is 5+5", "10");
         vragenLijst.add(vraag);
         vragenLijst.add(vraag2);
         Examen examen = new Examen("Wiskunde Examen", 10, vragenLijst);

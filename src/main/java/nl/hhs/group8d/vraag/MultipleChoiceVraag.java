@@ -1,19 +1,21 @@
 package nl.hhs.group8d.vraag;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MultipleChoiceVraag extends Vraag
 {
-    private ArrayList<String> opties;
-    private final String[] alfabet = new String[]{"a","b","c","d","e","f","g","h","i"};
+    private List<String> opties;
+    private final List<String> alfabet = Arrays.asList("a","b","c","d","e","f","g","h","i");
 
-   public MultipleChoiceVraag(String vraag, String correctAntwoord,ArrayList<String> opties)
+   public MultipleChoiceVraag(String vraag, String correctAntwoord, List<String> opties)
    {
        super(vraag,correctAntwoord);
        this.opties = opties;
    }
 
-    public ArrayList<String> getOpties()
+    public List<String> getOpties()
     {
         return this.opties;
     }
@@ -27,17 +29,17 @@ public class MultipleChoiceVraag extends Vraag
     {
         System.out.println(super.getVraag());
         for (int i =0;i<opties.size();i++){
-            System.out.println(alfabet[i].toUpperCase() +")- " + opties.get(i));
+            System.out.println(alfabet.get(i).toUpperCase() +")- " + opties.get(i));
         }
     }
 
     @Override
-    public boolean isCorrect(String antwoord)
-    {
-        if (antwoord.equals(super.getCorrecteAntwoord()))
-        {
-            return true;
+    public boolean isCorrect(String antwoord) {
+        int index = alfabet.indexOf(antwoord.toLowerCase());
+        if (index < 0 || index >= opties.size()) {
+            // Geen valide antwoord
+            return false;
         }
-        return false;
+        return getCorrecteAntwoord().equals(opties.get(index));
     }
 }
