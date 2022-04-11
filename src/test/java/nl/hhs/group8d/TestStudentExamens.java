@@ -28,8 +28,6 @@ public class TestStudentExamens {
         ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 1);
         student.addGemaakteExamen(examenResultaten);
 
-        Examen examen = new Examen("Wiskunde Examen", 10, vragenLijst);
-        ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 11);
         student.addGemaakteExamen(examenResultaten);
 
 
