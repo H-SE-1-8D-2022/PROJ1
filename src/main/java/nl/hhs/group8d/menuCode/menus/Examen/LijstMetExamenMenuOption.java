@@ -12,6 +12,13 @@ public class LijstMetExamenMenuOption extends MenuOption {
 
     @Override
     public void executeMenuOption() {
+        if(Examen.examens.size() == 0){
+            System.out.println("Er zijn nog geen examens.");
+            System.out.println("0. Exit");
+            getUserStringInput();
+            return;
+        }
+
         krijgLijstMetExamens();
 
     }

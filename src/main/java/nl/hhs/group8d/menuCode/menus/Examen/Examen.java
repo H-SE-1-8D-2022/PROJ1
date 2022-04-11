@@ -10,7 +10,7 @@ public  class Examen
 {
     private String name;
     private Integer aantalCorrectNodig;
-    public static ArrayList<Examen> examens;
+    public static ArrayList<Examen> examens = new ArrayList<>();
     private List<Vraag> vragen;
 
     public Examen(String name, Integer aantalCorrectNodig, List<Vraag> vragenN)
@@ -18,6 +18,7 @@ public  class Examen
         this.name = name;
         this.aantalCorrectNodig = aantalCorrectNodig;
         this.vragen = vragenN;
+        examens.add(this);
     }
 
     public void setName(String name)

@@ -38,7 +38,7 @@ public class Student {
         return studentenLijst;
     }
 
-  public  static void addGemaakteExamen(ExamenResultaten examenResultaat){
+  public void addGemaakteExamen(ExamenResultaten examenResultaat){
       File bestand = new File("Studentenlijst");
       bestand.mkdir();
       try(FileWriter fw = new FileWriter("Studentenlijst/" + examenResultaat.getStudent().getstudentNummer() + ".txt", true);

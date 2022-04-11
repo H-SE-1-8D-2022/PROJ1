@@ -25,7 +25,7 @@ public class TestStudentExamens {
         vragenLijst.add(vraag2);
         Examen examen = new Examen("Wiskunde Examen", 10, vragenLijst);
         ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 11);
-        Student.addGemaakteExamen(examenResultaten);
+        student.addGemaakteExamen(examenResultaten);
 
         String expectedResult = "Wiskunde Examen,11";
         String actualResult = getGemaaktExamen(nummer);
