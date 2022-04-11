@@ -45,7 +45,6 @@ public class Student {
           BufferedWriter bw = new BufferedWriter(fw);
           PrintWriter pw = new PrintWriter(bw)){
           pw.println(examenResultaat.getExamen().getName() + "," + examenResultaat.getAantalCorrect() + "," + examenResultaat.getExamen().getVragen().size() + "," + examenResultaat.heeftGehaald());
-          System.out.println("Examen toegevoegd");
       } catch (Exception e) {
           e.printStackTrace();
       }

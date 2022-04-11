@@ -58,25 +58,74 @@ public class StudentenLijstMenuOption extends MenuOption {
 
         System.out.println("Naam: " + student.getNaam());
         System.out.println("Studentnummer: " + student.getstudentNummer());
-        getStudentInfo(student.getstudentNummer());
-        System.out.println("0. exit");
-        getScanner().nextLine();
-    }
 
-    public void getStudentInfo(int nummer){
-        if(nummer == 0){
+        System.out.println("1. Alle examens");
+        System.out.println("2. Behaalde examens");
+        System.out.println("0. Exit");
+        int optie = getUserIntInput(0,2);
+        if(optie == 0){
             return;
         }
+        else if(optie == 1){
+            getStudentInfo(student.getstudentNummer());
+
+        }
+        else if(optie == 2){
+            getBehaaldeExamens(student.getstudentNummer());
+        }
+        System.out.println("0. exit");
+        getScanner().nextLine();
+
+
+    }
+
+    public void getBehaaldeExamens(int nummer){
         try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))){
             String regel;
+            boolean behaaldExamen = false;
             System.out.println("Gemaakte examens: ");
             while ((regel = in.readLine()) != null) {
+                String geslaagd = "";
                 String[] woorden = regel.split(",");
                 String examenNaam = woorden[0];
                 int aantalCorrect = Integer.parseInt(woorden[1]);
                 int totaalAantal = Integer.parseInt(woorden[2]);
-                String geslaagd = woorden[3];
-                System.out.println("[" + examenNaam + "]" + ", aantal correct: " + aantalCorrect + "/" + totaalAantal + " " + geslaagd);
+                boolean uitslag = Boolean.parseBoolean(woorden[3]);
+                if(uitslag){
+                    geslaagd = "Geslaagd";
+                    System.out.println("[" + examenNaam + "]" + ", aantal correct: " + aantalCorrect + "/" + totaalAantal + ", " + geslaagd);
+                    behaaldExamen = true;
+                }
+
+                if(!behaaldExamen){
+                    System.out.println("Deze student heeft nog geen examens gehaald.");
+                }
+
+            }
+
+        }catch(Exception e){
+            System.out.println("Deze student heeft nog geen examens gemaakt.");
+        }
+    }
+
+    public void getStudentInfo(int nummer){
+        try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))){
+            String regel;
+            System.out.println("Gemaakte examens: ");
+            while ((regel = in.readLine()) != null) {
+                String geslaagd = "";
+                String[] woorden = regel.split(",");
+                String examenNaam = woorden[0];
+                int aantalCorrect = Integer.parseInt(woorden[1]);
+                int totaalAantal = Integer.parseInt(woorden[2]);
+                boolean uitslag = Boolean.parseBoolean(woorden[3]);
+                if(uitslag){
+                    geslaagd = "Geslaagd";
+                }
+                else{
+                    geslaagd = "Niet geslaagd";
+                }
+                System.out.println("[" + examenNaam + "]" + ", aantal correct: " + aantalCorrect + "/" + totaalAantal + ", " + geslaagd);
             }
 
         }catch(Exception e){
