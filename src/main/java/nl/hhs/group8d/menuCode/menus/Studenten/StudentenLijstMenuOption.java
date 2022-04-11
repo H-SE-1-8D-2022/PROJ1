@@ -58,6 +58,7 @@ public class StudentenLijstMenuOption extends MenuOption {
 
         System.out.println("Naam: " + student.getNaam());
         System.out.println("Studentnummer: " + student.getstudentNummer());
+
         getStudentInfo(student.getstudentNummer());
         System.out.println("0. exit");
         getScanner().nextLine();
