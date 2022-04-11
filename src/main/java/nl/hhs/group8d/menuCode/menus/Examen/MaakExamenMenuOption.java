@@ -38,6 +38,8 @@ public class MaakExamenMenuOption extends MenuOption {
 
             switch(answer){
                 case 0: {
+                    System.out.println("Examen aanmaken geannuleerd. \n0. exit");
+                    getUserStringInput();
                     return;
                 }
                 case 1: {

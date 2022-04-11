@@ -31,9 +31,7 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
         boolean examenGehaald = false;
         try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + student.getstudentNummer() + ".txt"))){
             String regel;
-            boolean behaaldExamen = false;
             while ((regel = in.readLine()) != null) {
-                String geslaagd = "";
                 String[] woorden = regel.split(",");
                 String examenNaam = woorden[0];
                 int aantalCorrectGemaakt = Integer.parseInt(woorden[1]);
@@ -41,11 +39,10 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
                 boolean gehaald = Boolean.parseBoolean(woorden[3]);
 
                 if(gehaald && examen.getName().equals(examenNaam)){
-                        examenGehaald = true;
-                        aantalCorrect = aantalCorrectGemaakt;
-                        totaalAantalVragen = totaalVragen;
-                        break;
-
+                    examenGehaald = true;
+                    aantalCorrect = aantalCorrectGemaakt;
+                    totaalAantalVragen = totaalVragen;
+                    break;
                 }
 
             }
