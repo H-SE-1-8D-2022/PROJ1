@@ -2,6 +2,8 @@ package nl.hhs.group8d.menuCode.menus.Studenten;
 
 import nl.hhs.group8d.menuCode.MenuOption;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
@@ -56,10 +58,29 @@ public class StudentenLijstMenuOption extends MenuOption {
 
         System.out.println("Naam: " + student.getNaam());
         System.out.println("Studentnummer: " + student.getstudentNummer());
-        StudentInfoMenuOption sti = new StudentInfoMenuOption();
-        sti.getStudentInfo(student.getstudentNummer());
+        getStudentInfo(student.getstudentNummer());
         System.out.println("0. exit");
         getScanner().nextLine();
     }
 
+    public void getStudentInfo(int nummer){
+        if(nummer == 0){
+            return;
+        }
+        try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))){
+            String regel;
+            System.out.println("Gemaakte examens: ");
+            while ((regel = in.readLine()) != null) {
+                String[] woorden = regel.split(",");
+                String examenNaam = woorden[0];
+                int aantalCorrect = Integer.parseInt(woorden[1]);
+                int totaalAantal = Integer.parseInt(woorden[2]);
+                String geslaagd = woorden[3];
+                System.out.println("[" + examenNaam + "]" + ", aantal correct: " + aantalCorrect + "/" + totaalAantal + " " + geslaagd);
+            }
+
+        }catch(Exception e){
+            System.out.println("Deze student heeft nog geen examens gemaakt.");
+        }
+    }
 }

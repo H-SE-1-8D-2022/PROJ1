@@ -16,18 +16,18 @@ import static org.junit.Assert.assertEquals;
 public class TestStudentExamens {
     @Test
     public void examenToevoegen(){
-        int nummer = 123248567;
+        int nummer = 123;
         Student student = new Student("Stephan", nummer);
         ArrayList<Vraag> vragenLijst = new ArrayList<>();
         Vraag vraag = new OpenVraag("Hoeveel is 10x10", "100");
         Vraag vraag2 = new OpenVraag("Wat is 5+5", "10");
         vragenLijst.add(vraag);
         vragenLijst.add(vraag2);
-        Examen examen = new Examen("Wiskunde Examen", 10, vragenLijst);
-        ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 11);
+        Examen examen = new Examen("Wiskunde Examen", 2, vragenLijst);
+        ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 1);
         Student.addGemaakteExamen(examenResultaten);
 
-        String expectedResult = "Wiskunde Examen,11";
+        String expectedResult = "Wiskunde Examen,1,2";
         String actualResult = getGemaaktExamen(nummer);
         assertEquals(expectedResult, actualResult);
     }

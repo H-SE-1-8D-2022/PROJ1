@@ -44,7 +44,7 @@ public class Student {
       try(FileWriter fw = new FileWriter("Studentenlijst/" + examenResultaat.getStudent().getstudentNummer() + ".txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
           PrintWriter pw = new PrintWriter(bw)){
-          pw.println(examenResultaat.getExamen().getName() + "," + examenResultaat.getAantalCorrect());
+          pw.println(examenResultaat.getExamen().getName() + "," + examenResultaat.getAantalCorrect() + "," + examenResultaat.getExamen().getVragen().size() + "," + examenResultaat.heeftGehaald());
           System.out.println("Examen toegevoegd");
       } catch (Exception e) {
           e.printStackTrace();

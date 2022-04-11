@@ -2,7 +2,6 @@ package nl.hhs.group8d.menuCode.menus;
 
 import nl.hhs.group8d.menuCode.Menu;
 import nl.hhs.group8d.menuCode.MenuOption;
-import nl.hhs.group8d.menuCode.menus.Studenten.StudentInfoMenuOption;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentInschrijvenMenuOption;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentVerwijderenMenuOption;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentenLijstMenuOption;
