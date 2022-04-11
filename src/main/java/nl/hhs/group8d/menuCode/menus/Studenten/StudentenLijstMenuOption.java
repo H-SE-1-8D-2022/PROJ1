@@ -58,7 +58,7 @@ public class StudentenLijstMenuOption extends MenuOption {
 
         System.out.println("Naam: " + student.getNaam());
         System.out.println("Studentnummer: " + student.getstudentNummer());
-
+        
         System.out.println("1. Alle examens");
         System.out.println("2. Behaalde examens");
         System.out.println("0. Exit");
@@ -73,6 +73,7 @@ public class StudentenLijstMenuOption extends MenuOption {
         else if(optie == 2){
             getBehaaldeExamens(student.getstudentNummer());
         }
+
         System.out.println("0. exit");
         getScanner().nextLine();
 
