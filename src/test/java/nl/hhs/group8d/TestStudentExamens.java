@@ -23,9 +23,15 @@ public class TestStudentExamens {
         Vraag vraag2 = new OpenVraag("Wat is 5+5", "10");
         vragenLijst.add(vraag);
         vragenLijst.add(vraag2);
+
         Examen examen = new Examen("Wiskunde Examen", 2, vragenLijst);
         ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 1);
-        Student.addGemaakteExamen(examenResultaten);
+        student.addGemaakteExamen(examenResultaten);
+
+        Examen examen = new Examen("Wiskunde Examen", 10, vragenLijst);
+        ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 11);
+        student.addGemaakteExamen(examenResultaten);
+
 
         String expectedResult = "Wiskunde Examen,1,2";
         String actualResult = getGemaaktExamen(nummer);
