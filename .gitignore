@@ -115,3 +115,4 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 Student.txt
+*.txt

@@ -29,7 +29,7 @@ public abstract class MenuOption {
             try {
                 int input = scanner.nextInt();
 
-                if(input >= min && input < max){
+                if(input >= min && input <= max){
                     return input;
                 } else {
                     System.out.println("Vul alstublieft een geldig getal in.");
