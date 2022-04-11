@@ -34,12 +34,13 @@ public class MultipleChoiceVraag extends Vraag
     }
 
     @Override
-    public boolean isCorrect(String antwoord) {
+    public boolean isCorrect(String antwoord){
         int index = alfabet.indexOf(antwoord.toLowerCase());
-        if (index < 0 || index >= opties.size()) {
+        if (index < 0 || index >= opties.size()){
             // Geen valide antwoord
             return false;
         }
+
         return getCorrecteAntwoord().equals(opties.get(index));
     }
 }
