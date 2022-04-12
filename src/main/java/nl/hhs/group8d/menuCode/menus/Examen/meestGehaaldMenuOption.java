@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static nl.hhs.group8d.menuCode.menus.Studenten.Student.studentenLijst;
 
-public class meestGehaaldeMenuOption extends MenuOption {
+public class meestGehaaldMenuOption extends MenuOption {
 
     @Override
     public String getTitle() {
@@ -18,10 +18,10 @@ public class meestGehaaldeMenuOption extends MenuOption {
 
     @Override
     public void executeMenuOption() {
-        meestBehaald();
+        meestGehaald();
     }
 
-    private void meestBehaald(){
+    private void meestGehaald(){
         ArrayList<Student> besteStudenten = new ArrayList<>();
         int hoogsteAantal = 0;
         for(Student student : studentenLijst) {
