@@ -4,12 +4,11 @@ import nl.hhs.group8d.menuCode.menus.Studenten.Student;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentInschrijvenMenuOption;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentVerwijderenMenuOption;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
-
-import static org.junit.Assert.assertEquals;
 
 
 public class TestStudentToevoegen {
@@ -27,8 +26,8 @@ public class TestStudentToevoegen {
         Student actualResult = Student.studentenLijst.get(Student.studentenLijst.size() - 1);
 
         //Assert
-        assertEquals(expectedResult.getNaam(), actualResult.getNaam());
-        assertEquals(expectedResult.getstudentNummer(), actualResult.getstudentNummer());
+        Assertions.assertEquals(expectedResult.getNaam(), actualResult.getNaam());
+        Assertions.assertEquals(expectedResult.getstudentNummer(), actualResult.getstudentNummer());
     }
 
     @AfterEach

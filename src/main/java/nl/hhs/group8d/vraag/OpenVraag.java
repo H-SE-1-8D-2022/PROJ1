@@ -1,5 +1,7 @@
 package nl.hhs.group8d.vraag;
 
+import java.util.Locale;
+
 public class OpenVraag extends Vraag
 {
 
@@ -19,6 +21,6 @@ public class OpenVraag extends Vraag
     @Override
     public boolean isCorrect(String antwoord)
     {
-        return antwoord.equals(getCorrecteAntwoord());
+        return antwoord.toLowerCase(Locale.ROOT).equals(getCorrecteAntwoord().toLowerCase(Locale.ROOT));
     }
 }

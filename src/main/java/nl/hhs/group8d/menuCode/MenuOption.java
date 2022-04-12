@@ -25,12 +25,14 @@ public abstract class MenuOption {
 
     protected int getUserIntInput(int min, int max){
         boolean noValidInput = true;
+        int input = -1;
+
         while (noValidInput) {
             try {
-                int input = scanner.nextInt();
+                input = scanner.nextInt();
 
                 if(input >= min && input <= max){
-                    return input;
+                    noValidInput = false;
                 } else {
                     System.out.println("Vul alstublieft een geldig getal in.");
                 }
@@ -40,17 +42,17 @@ public abstract class MenuOption {
             }
         }
 
-        return 0;
+        return input;
     }
 
     protected String getUserStringInput(){
         String text = getScanner().nextLine();
 
-        if(text.equals("")){
-            return getScanner().nextLine();
-        } else {
-            return text;
+        while (text.equals("")){
+            text = getScanner().nextLine();
         }
+
+        return text;
     }
 
 }
