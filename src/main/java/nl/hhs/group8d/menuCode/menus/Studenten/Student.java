@@ -40,7 +40,9 @@ public class Student {
 
   public void addGemaakteExamen(ExamenResultaten examenResultaat){
       File bestand = new File("Studentenlijst");
-      bestand.mkdir();
+      if(!bestand.exists()) {
+          bestand.mkdir();
+      }
       try(FileWriter fw = new FileWriter("Studentenlijst/" + examenResultaat.getStudent().getstudentNummer() + ".txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
           PrintWriter pw = new PrintWriter(bw)){

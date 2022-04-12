@@ -3,6 +3,7 @@ package nl.hhs.group8d;
 import nl.hhs.group8d.menuCode.menus.Studenten.Student;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentInschrijvenMenuOption;
 import nl.hhs.group8d.menuCode.menus.Studenten.StudentVerwijderenMenuOption;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +21,6 @@ public class TestStudentVerwijderen {
 
         StudentInschrijvenMenuOption studentInschrijven = new StudentInschrijvenMenuOption();
         studentInschrijven.executeMenuOption();
-
     }
 
     @Test
@@ -37,7 +37,7 @@ public class TestStudentVerwijderen {
         Student actualResult = Student.studentenLijst.get(Student.studentenLijst.size() - 1);
 
         //Assert
-        assertNotEquals(expectedResult, actualResult.getstudentNummer());
+        Assertions.assertNotEquals(expectedResult, actualResult.getstudentNummer());
     }
 
 }

@@ -5,13 +5,13 @@ import nl.hhs.group8d.menuCode.menus.Examen.Examen;
 import nl.hhs.group8d.menuCode.menus.Studenten.Student;
 import nl.hhs.group8d.vraag.OpenVraag;
 import nl.hhs.group8d.vraag.Vraag;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
 
 public class TestStudentExamens {
     @Test
@@ -33,7 +33,7 @@ public class TestStudentExamens {
 
         String expectedResult = "Wiskunde Examen,1,2,false";
         String actualResult = getGemaaktExamen(nummer);
-        assertEquals(expectedResult, actualResult);
+        Assertions.assertEquals(expectedResult, actualResult);
     }
 
     private String getGemaaktExamen(int nummer){
