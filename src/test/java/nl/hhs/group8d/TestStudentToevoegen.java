@@ -16,11 +16,11 @@ public class TestStudentToevoegen {
     @Test
     public void studentToevoegen(){
         //Arrange
-        StudentInschrijvenMenuOption studentInschrijven = new StudentInschrijvenMenuOption();
+        Student expectedResult = new Student("Stephan", 147852);
         String input = "Stephan\n147852\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
-        Student expectedResult = new Student("Stephan", 147852);
+        StudentInschrijvenMenuOption studentInschrijven = new StudentInschrijvenMenuOption();
 
         //Act
         studentInschrijven.executeMenuOption();
@@ -30,7 +30,7 @@ public class TestStudentToevoegen {
         assertEquals(expectedResult.getNaam(), actualResult.getNaam());
         assertEquals(expectedResult.getstudentNummer(), actualResult.getstudentNummer());
     }
-    
+
     @AfterEach
     public void verijwderStudent(){
         String input = Student.studentenLijst.size() + "\n0\n";

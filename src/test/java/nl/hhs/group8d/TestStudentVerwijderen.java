@@ -20,7 +20,6 @@ public class TestStudentVerwijderen {
 
         StudentInschrijvenMenuOption studentInschrijven = new StudentInschrijvenMenuOption();
         studentInschrijven.executeMenuOption();
-
     }
 
     @Test
