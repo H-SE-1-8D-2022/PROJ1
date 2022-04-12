@@ -1,16 +1,17 @@
 package nl.hhs.group8d.menuCode;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Menu {
 
-    private ArrayList<MenuOption> menuOptions;
+    private final List<MenuOption> menuOptions;
 
     public Menu(){
         this.menuOptions = new ArrayList<>();
     }
 
-    public ArrayList<MenuOption> getMenuOptions() {
+    public List<MenuOption> getMenuOptions() {
         return menuOptions;
     }
 

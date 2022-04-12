@@ -38,43 +38,24 @@ public class Student {
         return studentenLijst;
     }
 
-  public  static void addGemaakteExamen(ExamenResultaten examenResultaat){
+  public void addGemaakteExamen(ExamenResultaten examenResultaat){
       File bestand = new File("Studentenlijst");
       bestand.mkdir();
       try(FileWriter fw = new FileWriter("Studentenlijst/" + examenResultaat.getStudent().getstudentNummer() + ".txt", true);
           BufferedWriter bw = new BufferedWriter(fw);
           PrintWriter pw = new PrintWriter(bw)){
-          pw.println(examenResultaat.getExamen().getName() + "," + examenResultaat.getAantalCorrect());
-          System.out.println("Examen toegevoegd");
+          pw.println(examenResultaat.getExamen().getName() + "," + examenResultaat.getAantalCorrect() + "," + examenResultaat.getExamen().getVragen().size() + "," + examenResultaat.heeftGehaald());
       } catch (Exception e) {
           e.printStackTrace();
       }
   }
 
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "naam='" + naam + '\'' +
-                ", studentNummer=" + studentNummer +
-                '}';
-    }
-
-
     public String getNaam() {
         return naam;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-
     public int getstudentNummer() {
         return studentNummer;
-    }
-
-    public void setstudentNummer(int studentNummer) {
-        this.studentNummer = studentNummer;
     }
 
 }

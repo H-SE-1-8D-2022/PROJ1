@@ -9,14 +9,14 @@ import java.util.Scanner;
 
 public class MenuManager {
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
 
     //Arraylist houd de huidige menu opties bij
     private Menu currentMenu;
 
     //Arraylist die houd alle vorige menuopties bij voor backtracking
-    private ArrayList<Menu> listOfPreviousMenus = new ArrayList<>();
+    private final ArrayList<Menu> listOfPreviousMenus = new ArrayList<>();
 
     public void start(){
         this.currentMenu = new StartMenu();
@@ -24,26 +24,28 @@ public class MenuManager {
     }
 
     public void printMenuAndAskInput(){
-        printMenu();
-        processUserInput(getUserInput());
+        boolean repeat = true;
+
+        while (repeat) {
+            printMenu();
+            repeat = processUserInput(getUserInput());
+        }
     }
 
-    private void processUserInput(int userInput){
+    private boolean processUserInput(int userInput){
 
         //Als de 0: exit menu is gekozen
         if(userInput == 0){
             //Kijken of we in de main menu zitten en zowel gwn weg gaan
-            if(listOfPreviousMenus.size() == 0){
-                return;
+            if(listOfPreviousMenus.isEmpty()){
+                return false;
             }
 
             //De huidige menu options terug zetten naar de vorige menu opties
             currentMenu = listOfPreviousMenus.get(listOfPreviousMenus.size() -1);
             //de vorige menu opties die zijn gecloned verwijderen omdat we ze niet meer nodig hebben
             listOfPreviousMenus.remove(listOfPreviousMenus.size()-1);
-
-            printMenuAndAskInput();
-            return;
+            return true;
         }
 
         //Een array begint met 0, maar de menu opties beginnen met 1, dus we willen de index met 1 verminderen
@@ -56,8 +58,7 @@ public class MenuManager {
 
         //Als er geen volgende menu opties zijn checken we voor nieuwe input
         if(nextMenu == null){
-            printMenuAndAskInput();
-            return;
+            return true;
         }
 
         //het huidige menu opslaan voor backtracking
@@ -65,21 +66,24 @@ public class MenuManager {
 
         //het huidige menu updaten met de nieuwe submenu
         currentMenu = nextMenu;
-        printMenuAndAskInput()     ;
+
+        return true;
     }
 
     private int getUserInput(){
         boolean noValidAnswer = true;
+        int answer = -1;
+
         while(noValidAnswer) {
             try {
-                int answer = scanner.nextInt();
+                answer = scanner.nextInt();
 
                 //See if the answer is inbetween the actual posible answers.
                 if (answer > currentMenu.getMenuOptions().size() || answer < 0) {
                     System.out.println("Please enter a valid number.");
                 } else {
-                    //Return statement haalt ons uit de while loop
-                    return answer;
+                    // Stop de loop
+                    noValidAnswer = false;
                 }
             } catch (InputMismatchException e) {
                 //input mismatch exception means they put text in the input but we're looking for ints so the input mismatches the expected outcome.
@@ -87,8 +91,9 @@ public class MenuManager {
                 scanner.nextLine();
             }
         }
-        //Mandatory return statement, actually does nothing
-        return 0;
+
+        // Return de waarde
+        return answer;
     }
 
     private void printMenu(){

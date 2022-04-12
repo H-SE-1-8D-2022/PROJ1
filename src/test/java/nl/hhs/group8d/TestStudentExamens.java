@@ -5,31 +5,35 @@ import nl.hhs.group8d.menuCode.menus.Examen.Examen;
 import nl.hhs.group8d.menuCode.menus.Studenten.Student;
 import nl.hhs.group8d.vraag.OpenVraag;
 import nl.hhs.group8d.vraag.Vraag;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
 
 public class TestStudentExamens {
     @Test
     public void examenToevoegen(){
-        int nummer = 123248567;
+        int nummer = 123;
         Student student = new Student("Stephan", nummer);
         ArrayList<Vraag> vragenLijst = new ArrayList<>();
         Vraag vraag = new OpenVraag("Hoeveel is 10x10", "100");
         Vraag vraag2 = new OpenVraag("Wat is 5+5", "10");
         vragenLijst.add(vraag);
         vragenLijst.add(vraag2);
-        Examen examen = new Examen("Wiskunde Examen", 10, vragenLijst);
-        ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 11);
-        Student.addGemaakteExamen(examenResultaten);
 
-        String expectedResult = "Wiskunde Examen,11";
+        Examen examen = new Examen("Wiskunde Examen", 2, vragenLijst);
+        ExamenResultaten examenResultaten = new ExamenResultaten(student, examen, 1);
+        student.addGemaakteExamen(examenResultaten);
+
+        student.addGemaakteExamen(examenResultaten);
+
+
+        String expectedResult = "Wiskunde Examen,1,2";
         String actualResult = getGemaaktExamen(nummer);
-        assertEquals(expectedResult, actualResult);
+        Assertions.assertEquals(expectedResult, actualResult);
     }
 
     private String getGemaaktExamen(int nummer){

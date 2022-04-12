@@ -14,12 +14,23 @@ public class AfnemenExamenMenuOption extends MenuOption {
 
     @Override
     public void executeMenuOption() {
+        if(Examen.examens.size() == 0){
+            System.out.println("Er zijn nog geen examens.");
+            System.out.println("0. Exit");
+            getUserStringInput();
+           return;
+        }
+
         printExamenOpties();
         Examen examen = getExamen();
         if (examen == null){
             return;
         }
-        openExamenOmgeving(vraagStudent(), examen);
+        Student student = vraagStudent();
+        if(student == null){
+            return;
+        }
+        openExamenOmgeving(student, examen);
 
 
     }
@@ -56,7 +67,9 @@ public class AfnemenExamenMenuOption extends MenuOption {
 
 
     private void openExamenOmgeving(Student student, Examen examen){
-        new ExamenOmgeving(student, examen);
+        ExamenOmgeving examenOmgeving = new ExamenOmgeving(student, examen);
+        examenOmgeving.startExamen();
+        student.addGemaakteExamen(examenOmgeving.getResultaten());
 
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public class MultipleChoiceVraag extends Vraag
 {
     private List<String> opties;
-    private final List<String> alfabet = Arrays.asList("a","b","c","d","e","f","g","h","i");
+    private final List<String> alfabet = Arrays.asList("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 
    public MultipleChoiceVraag(String vraag, String correctAntwoord, List<String> opties)
    {
