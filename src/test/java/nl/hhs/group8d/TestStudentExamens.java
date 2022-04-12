@@ -31,7 +31,7 @@ public class TestStudentExamens {
         student.addGemaakteExamen(examenResultaten);
 
 
-        String expectedResult = "Wiskunde Examen,1,2";
+        String expectedResult = "Wiskunde Examen,1,2,false";
         String actualResult = getGemaaktExamen(nummer);
         Assertions.assertEquals(expectedResult, actualResult);
     }
