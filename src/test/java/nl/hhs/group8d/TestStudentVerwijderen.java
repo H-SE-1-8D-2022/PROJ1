@@ -15,7 +15,7 @@ import static org.junit.Assert.assertNotEquals;
 public class TestStudentVerwijderen {
     @BeforeEach
     public void studentAanmaken(){
-        String input = "Stephan\n192168\n0\n";
+        String input = "Stephan\n1921689\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
 
@@ -26,11 +26,11 @@ public class TestStudentVerwijderen {
     @Test
     public void studentVerwijderen(){
         //Arrange
-        StudentVerwijderenMenuOption studentVerwijderen = new StudentVerwijderenMenuOption();
-        String input = Student.studentenLijst.size() + "\n0\n";
+        int expectedResult = 192168;
+        String input =  "2\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
-        int expectedResult = 192168;
+        StudentVerwijderenMenuOption studentVerwijderen = new StudentVerwijderenMenuOption();
 
         //Act
         studentVerwijderen.executeMenuOption();

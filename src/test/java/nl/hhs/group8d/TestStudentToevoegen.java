@@ -31,7 +31,7 @@ public class TestStudentToevoegen {
     }
 
     @AfterEach
-    public void verijwderStudent(){
+    public void verwijderStudent(){
         String input = Student.studentenLijst.size() + "\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
