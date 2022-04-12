@@ -26,7 +26,11 @@ public class AfnemenExamenMenuOption extends MenuOption {
         if (examen == null){
             return;
         }
-        openExamenOmgeving(vraagStudent(), examen);
+        Student student = vraagStudent();
+        if(student == null){
+            return;
+        }
+        openExamenOmgeving(student, examen);
 
 
     }
