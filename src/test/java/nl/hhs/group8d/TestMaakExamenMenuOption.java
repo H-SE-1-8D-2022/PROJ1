@@ -2,7 +2,7 @@ package nl.hhs.group8d;
 
 import nl.hhs.group8d.menuCode.menus.Examen.Examen;
 import nl.hhs.group8d.menuCode.menus.Examen.MaakExamenMenuOption;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -27,14 +27,11 @@ class TestMaakExamenMenuOption {
 
         Examen aangemaakteExamen = Examen.examens.get(Examen.examens.size()-1);
 
-        Assert.assertEquals(currentExamenAmount+1, Examen.examens.size());
-        Assert.assertEquals(aangemaakteExamen.getName(), "Wiskunde Examen");
-        Assert.assertEquals(aangemaakteExamen.getVragen().size(), 3);
-        Assert.assertEquals(aangemaakteExamen.getVragen().get(0).getCorrecteAntwoord(), "6");
-        Assert.assertEquals(aangemaakteExamen.getVragen().get(1).getCorrecteAntwoord(), "True");
-        Assert.assertEquals(aangemaakteExamen.getVragen().get(2).getCorrecteAntwoord(), "15");
-
-
+        Assertions.assertEquals(currentExamenAmount+1, Examen.examens.size());
+        Assertions.assertEquals("Wiskunde Examen", aangemaakteExamen.getName());
+        Assertions.assertEquals(3, aangemaakteExamen.getVragen().size());
+        Assertions.assertEquals("6", aangemaakteExamen.getVragen().get(0).getCorrecteAntwoord());
+        Assertions.assertEquals("True", aangemaakteExamen.getVragen().get(1).getCorrecteAntwoord());
+        Assertions.assertEquals("15", aangemaakteExamen.getVragen().get(2).getCorrecteAntwoord());
     }
-
 }
