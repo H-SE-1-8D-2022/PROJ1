@@ -50,30 +50,12 @@ public class Student {
       }
   }
 
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "naam='" + naam + '\'' +
-                ", studentNummer=" + studentNummer +
-                '}';
-    }
-
-
     public String getNaam() {
         return naam;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-
     public int getstudentNummer() {
         return studentNummer;
-    }
-
-    public void setstudentNummer(int studentNummer) {
-        this.studentNummer = studentNummer;
     }
 
 }
