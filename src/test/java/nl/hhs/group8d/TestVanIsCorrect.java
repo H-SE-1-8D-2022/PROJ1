@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
 
-public class testVanIsCorrect {
+public class TestVanIsCorrect {
     @Test
     public void isCorrect() {
         ArrayList<String> opties = new ArrayList<>();

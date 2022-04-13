@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import static nl.hhs.group8d.entities.Student.studentenLijst;
 
-public class meestGehaaldMenuOption extends MenuOption {
+public class MeestGehaaldMenuOption extends MenuOption {
 
     @Override
     public String getTitle() {
