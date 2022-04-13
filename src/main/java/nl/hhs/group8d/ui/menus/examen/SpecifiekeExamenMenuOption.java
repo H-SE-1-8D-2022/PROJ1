@@ -66,7 +66,7 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
 
     private Examen getExamen() {
         System.out.println("Wat is de naam van de examen die u wilt controlleren?\n0. exit");
-
+        System.out.print("Examen: ");
         while (true) {
             String naam = getUserStringInput();
 
@@ -83,7 +83,7 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
 
     private Student getStudent() {
         System.out.println("Welke student wilt u controlleren? (Voer het studentnummer in.)\n0. exit");
-
+        System.out.print("Student: ");
         while (true) {
             int studentNummer = getUserIntInput(0, 99999999);
             if (studentNummer == 0) return null;

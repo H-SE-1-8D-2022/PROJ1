@@ -51,7 +51,8 @@ public class AfnemenExamenMenuOption extends MenuOption {
                 return Student.studentenLijst.get(lsn);
             }
         }
-        System.out.println("Dit studentnummer staat niet in het systeem!");
+        System.out.println("Dit studentnummer staat niet in het systeem.\n0. exit");
+        getUserStringInput();
         return null;
     }
 

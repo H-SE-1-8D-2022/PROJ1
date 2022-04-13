@@ -25,6 +25,7 @@ public class ExamenOmgeving {
         for (Vraag vraag : vragen) {
             stelVraag(vraag);
         }
+        printEindResultaat();
     }
 
     private void randomizeVragen() {
@@ -38,8 +39,9 @@ public class ExamenOmgeving {
             System.out.println("Correct!");
             aantalCorrect++;
         } else {
-            System.out.println("Fout, het correcte antwoord was: " + vraag.getCorrecteAntwoord());
+            System.out.println("Fout, het juiste antwoord was: " + vraag.getCorrecteAntwoord());
         }
+        System.out.println();
     }
 
     private String krijgAntwoord() {
@@ -56,6 +58,21 @@ public class ExamenOmgeving {
         for (Vraag vraag : vragen) {
             stelVraag(vraag);
         }
+    }
+
+    private void printEindResultaat(){
+        System.out.println("Examen afgerond.");
+        System.out.println("Eindscore:");
+        System.out.println("Antwoorden goed: "+aantalCorrect+"/"+this.examen.getVragen().size());
+        System.out.println("Hoeveelheid goed nodig: "+this.examen.getAantalCorrectNodig());
+        System.out.print("Je bent ");
+        if(this.aantalCorrect >= this.examen.getAantalCorrectNodig()){
+            System.out.println("geslaagd.");
+        } else {
+            System.out.println("helaas niet geslaagd.");
+        }
+        System.out.println("0. Exit.");
+        this.scanner.nextLine();
     }
 
     private void randomizeVragenRandom(Random random) {

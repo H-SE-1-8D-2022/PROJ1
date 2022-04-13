@@ -10,6 +10,10 @@ import java.nio.charset.StandardCharsets;
 
 class TestMaakExamen {
 
+    /**
+     * Deze test word gebruikt om het aanmaken van een test via de user interface te testen.
+     * We maken een examen aan en testen daarna of de examen is toegevoegd aan de local arraylist en of de hoeveelheid vragen kloppen met de juiste antwoorden.
+     */
     @Test
     void maakExamenTest() {
 

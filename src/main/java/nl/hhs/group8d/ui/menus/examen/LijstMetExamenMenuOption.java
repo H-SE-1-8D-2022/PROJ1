@@ -24,8 +24,10 @@ public class LijstMetExamenMenuOption extends MenuOption {
 
     @SuppressWarnings("SameReturnValue")
     private void krijgLijstMetExamens() {
+        System.out.println("Er zijn "+Examen.examens.size()+" examens.");
+        System.out.println("Examens:");
         for (int peo = 0; peo < Examen.examens.size(); peo++) {
-            System.out.println((peo + 1) + ". " + Examen.examens.get(peo).getName());
+            System.out.println("- " + Examen.examens.get(peo).getName());
         }
         System.out.println("0. exit");
         getUserIntInput();

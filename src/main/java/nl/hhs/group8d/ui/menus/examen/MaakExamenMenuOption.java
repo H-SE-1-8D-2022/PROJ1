@@ -21,11 +21,14 @@ public class MaakExamenMenuOption extends MenuOption {
     @Override
     public void executeMenuOption() {
         System.out.println("Wat is de naam van de examen?");
+        System.out.print("Naam: ");
         String name = getUserStringInput();
 
         System.out.println("Hoeveel vragen?");
+        System.out.print("Aantal: ");
         int aantalVragen = getUserIntInput();
         System.out.println("Hoeveel moeten er correct zijn?");
+        System.out.print("Aantal: ");
         int correct = getUserIntInput(0, aantalVragen);
 
         for (int i = 0; i < aantalVragen; i++) {
@@ -34,6 +37,7 @@ public class MaakExamenMenuOption extends MenuOption {
             System.out.println("2. True/False vraag");
             System.out.println("3. open vraag");
             System.out.println("0. exit.");
+            System.out.print("Keuze: ");
 
             int answer = getUserIntInput(0, 3);
 
@@ -68,15 +72,19 @@ public class MaakExamenMenuOption extends MenuOption {
         ArrayList<String> opties = new ArrayList<>();
 
         System.out.println("Wat is de naam van de meerkeuze vraag");
+        System.out.print("Naam: ");
         String naam = getUserStringInput();
         System.out.println("Wat is het juiste antwoord?");
+        System.out.print("Antwoord: ");
         String antwoord = getUserStringInput();
 
         System.out.println("Hoeveel mogelijke antwoorden?");
+        System.out.print("Aantal: ");
         int possiblities = getUserIntInput();
 
         for (int i = 0; i < possiblities; i++) {
-            System.out.println("Wat is een optie?");
+            System.out.println("Wat is een antwoord optie? (Het juiste antwoord moet ook worden ingezet.)");
+            System.out.print("Antwoord: ");
             opties.add(getUserStringInput());
         }
 
@@ -85,8 +93,10 @@ public class MaakExamenMenuOption extends MenuOption {
 
     private void createTrueFalseVraag() {
         System.out.println("Wat is de naam van de true / false vraag?");
+        System.out.print("Naam: ");
         String naam = getUserStringInput();
         System.out.println("Is het true of false? \n1. True \n2. False");
+        System.out.print("Keuze: ");
         int answer = getUserIntInput(1, 2);
         if (answer == 1) {
             vragen.add(new TrueFalseVraag(naam, "True"));
@@ -99,8 +109,10 @@ public class MaakExamenMenuOption extends MenuOption {
 
     private void createOpenVraag() {
         System.out.println("Wat is de naam van de open vraag?");
+        System.out.print("Naam: ");
         String naam = getUserStringInput();
         System.out.println("Wat is het juiste antwoord?");
+        System.out.print("Antwoord: ");
         String antwoord = getUserStringInput();
 
         vragen.add(new OpenVraag(naam, antwoord));
