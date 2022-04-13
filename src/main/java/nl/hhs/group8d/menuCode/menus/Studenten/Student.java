@@ -48,7 +48,7 @@ public class Student {
           PrintWriter pw = new PrintWriter(bw)){
           pw.println(examenResultaat.getExamen().getName() + "," + examenResultaat.getAantalCorrect() + "," + examenResultaat.getExamen().getVragen().size() + "," + examenResultaat.heeftGehaald());
       } catch (Exception e) {
-          e.printStackTrace();
+          System.out.println("Error bij het toevoegen van het examen");
       }
   }
 
