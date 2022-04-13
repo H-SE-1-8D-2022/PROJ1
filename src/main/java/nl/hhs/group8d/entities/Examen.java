@@ -1,9 +1,8 @@
-package nl.hhs.group8d.menuCode.menus.Examen;
+package nl.hhs.group8d.entities;
 
 import nl.hhs.group8d.vraag.Vraag;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public  class Examen

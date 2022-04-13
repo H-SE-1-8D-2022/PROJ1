@@ -1,6 +1,6 @@
-package nl.hhs.group8d.menuCode.menus;
+package nl.hhs.group8d.ui.menus;
 
-import nl.hhs.group8d.menuCode.Menu;
+import nl.hhs.group8d.ui.Menu;
 
 public class StartMenu extends Menu {
 

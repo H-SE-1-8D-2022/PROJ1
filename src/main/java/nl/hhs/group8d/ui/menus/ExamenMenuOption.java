@@ -1,11 +1,11 @@
-package nl.hhs.group8d.menuCode.menus;
+package nl.hhs.group8d.ui.menus;
 
-import nl.hhs.group8d.menuCode.Menu;
-import nl.hhs.group8d.menuCode.MenuOption;
-import nl.hhs.group8d.menuCode.menus.Examen.AfnemenExamenMenuOption;
-import nl.hhs.group8d.menuCode.menus.Examen.ExamenResultatenMenuOption;
-import nl.hhs.group8d.menuCode.menus.Examen.LijstMetExamenMenuOption;
-import nl.hhs.group8d.menuCode.menus.Examen.MaakExamenMenuOption;
+import nl.hhs.group8d.ui.Menu;
+import nl.hhs.group8d.ui.MenuOption;
+import nl.hhs.group8d.ui.menus.examen.AfnemenExamenMenuOption;
+import nl.hhs.group8d.ui.menus.examen.ExamenResultatenMenuOption;
+import nl.hhs.group8d.ui.menus.examen.LijstMetExamenMenuOption;
+import nl.hhs.group8d.ui.menus.examen.MaakExamenMenuOption;
 
 public class ExamenMenuOption extends MenuOption {
 

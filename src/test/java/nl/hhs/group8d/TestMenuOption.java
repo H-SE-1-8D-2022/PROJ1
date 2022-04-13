@@ -1,7 +1,7 @@
 package nl.hhs.group8d;
 
-import nl.hhs.group8d.menuCode.Menu;
-import nl.hhs.group8d.menuCode.MenuOption;
+import nl.hhs.group8d.ui.Menu;
+import nl.hhs.group8d.ui.MenuOption;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;

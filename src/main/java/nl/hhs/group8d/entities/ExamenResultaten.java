@@ -1,7 +1,4 @@
-package nl.hhs.group8d.menuCode.entities;
-
-import nl.hhs.group8d.menuCode.menus.Examen.Examen;
-import nl.hhs.group8d.menuCode.menus.Studenten.Student;
+package nl.hhs.group8d.entities;
 
 public class ExamenResultaten {
     private final Student student;

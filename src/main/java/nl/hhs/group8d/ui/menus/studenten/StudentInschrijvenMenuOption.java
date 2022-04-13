@@ -1,6 +1,7 @@
-package nl.hhs.group8d.menuCode.menus.Studenten;
+package nl.hhs.group8d.ui.menus.studenten;
 
-import nl.hhs.group8d.menuCode.MenuOption;
+import nl.hhs.group8d.ui.MenuOption;
+import nl.hhs.group8d.entities.Student;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

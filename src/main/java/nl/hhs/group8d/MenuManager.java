@@ -1,7 +1,7 @@
 package nl.hhs.group8d;
 
-import nl.hhs.group8d.menuCode.*;
-import nl.hhs.group8d.menuCode.menus.StartMenu;
+import nl.hhs.group8d.ui.*;
+import nl.hhs.group8d.ui.menus.StartMenu;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;

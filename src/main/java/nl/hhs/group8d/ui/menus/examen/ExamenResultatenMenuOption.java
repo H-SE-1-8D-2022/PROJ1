@@ -1,8 +1,8 @@
-package nl.hhs.group8d.menuCode.menus.Examen;
+package nl.hhs.group8d.ui.menus.examen;
 
 
-import nl.hhs.group8d.menuCode.Menu;
-import nl.hhs.group8d.menuCode.MenuOption;
+import nl.hhs.group8d.ui.Menu;
+import nl.hhs.group8d.ui.MenuOption;
 
 public class ExamenResultatenMenuOption extends MenuOption {
     @Override

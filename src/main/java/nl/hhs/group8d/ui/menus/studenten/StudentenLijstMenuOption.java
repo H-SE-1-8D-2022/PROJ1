@@ -1,11 +1,11 @@
-package nl.hhs.group8d.menuCode.menus.Studenten;
+package nl.hhs.group8d.ui.menus.studenten;
 
-import nl.hhs.group8d.menuCode.MenuOption;
+import nl.hhs.group8d.ui.MenuOption;
+import nl.hhs.group8d.entities.Student;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 
 public class StudentenLijstMenuOption extends MenuOption {
     @Override

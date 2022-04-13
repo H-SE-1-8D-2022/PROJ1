@@ -1,6 +1,6 @@
 package nl.hhs.group8d;
 
-import nl.hhs.group8d.menuCode.menus.Examen.Examen;
+import nl.hhs.group8d.entities.Examen;
 import nl.hhs.group8d.vraag.MultipleChoiceVraag;
 import nl.hhs.group8d.vraag.OpenVraag;
 

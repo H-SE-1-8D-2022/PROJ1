@@ -1,8 +1,8 @@
 package nl.hhs.group8d;
 
-import nl.hhs.group8d.menuCode.entities.ExamenResultaten;
-import nl.hhs.group8d.menuCode.menus.Examen.Examen;
-import nl.hhs.group8d.menuCode.menus.Studenten.Student;
+import nl.hhs.group8d.entities.ExamenResultaten;
+import nl.hhs.group8d.entities.Examen;
+import nl.hhs.group8d.entities.Student;
 import nl.hhs.group8d.vraag.OpenVraag;
 import nl.hhs.group8d.vraag.Vraag;
 import org.junit.jupiter.api.Assertions;

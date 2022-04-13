@@ -1,13 +1,13 @@
-package nl.hhs.group8d.menuCode.menus.Examen;
+package nl.hhs.group8d.ui.menus.examen;
 
-import nl.hhs.group8d.menuCode.MenuOption;
-import nl.hhs.group8d.menuCode.menus.Studenten.Student;
+import nl.hhs.group8d.ui.MenuOption;
+import nl.hhs.group8d.entities.Student;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-import static nl.hhs.group8d.menuCode.menus.Studenten.Student.studentenLijst;
+import static nl.hhs.group8d.entities.Student.studentenLijst;
 
 public class meestGehaaldMenuOption extends MenuOption {
 

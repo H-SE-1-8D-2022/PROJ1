@@ -1,10 +1,10 @@
-package nl.hhs.group8d.menuCode.menus;
+package nl.hhs.group8d.ui.menus;
 
-import nl.hhs.group8d.menuCode.Menu;
-import nl.hhs.group8d.menuCode.MenuOption;
-import nl.hhs.group8d.menuCode.menus.Studenten.StudentInschrijvenMenuOption;
-import nl.hhs.group8d.menuCode.menus.Studenten.StudentVerwijderenMenuOption;
-import nl.hhs.group8d.menuCode.menus.Studenten.StudentenLijstMenuOption;
+import nl.hhs.group8d.ui.Menu;
+import nl.hhs.group8d.ui.MenuOption;
+import nl.hhs.group8d.ui.menus.studenten.StudentInschrijvenMenuOption;
+import nl.hhs.group8d.ui.menus.studenten.StudentVerwijderenMenuOption;
+import nl.hhs.group8d.ui.menus.studenten.StudentenLijstMenuOption;
 
 public class StudentMenuOption extends MenuOption {
     @Override

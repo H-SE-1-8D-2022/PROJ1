@@ -1,7 +1,7 @@
 package nl.hhs.group8d;
 
-import nl.hhs.group8d.menuCode.menus.Examen.Examen;
-import nl.hhs.group8d.menuCode.menus.Examen.MaakExamenMenuOption;
+import nl.hhs.group8d.entities.Examen;
+import nl.hhs.group8d.ui.menus.examen.MaakExamenMenuOption;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

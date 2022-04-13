@@ -1,4 +1,4 @@
-package nl.hhs.group8d.menuCode;
+package nl.hhs.group8d.ui;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,4 @@
-package nl.hhs.group8d.menuCode.menus.Studenten;
-
-
-import nl.hhs.group8d.menuCode.entities.ExamenResultaten;
+package nl.hhs.group8d.entities;
 
 
 import java.io.*;

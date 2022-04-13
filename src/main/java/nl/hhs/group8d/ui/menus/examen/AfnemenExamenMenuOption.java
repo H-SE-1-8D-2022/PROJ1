@@ -1,10 +1,9 @@
-package nl.hhs.group8d.menuCode.menus.Examen;
+package nl.hhs.group8d.ui.menus.examen;
 
-import nl.hhs.group8d.menuCode.MenuOption;
-import nl.hhs.group8d.menuCode.entities.ExamenOmgeving;
-import nl.hhs.group8d.menuCode.menus.Studenten.Student;
-
-import java.util.Scanner;
+import nl.hhs.group8d.ui.MenuOption;
+import nl.hhs.group8d.entities.Examen;
+import nl.hhs.group8d.entities.ExamenOmgeving;
+import nl.hhs.group8d.entities.Student;
 
 public class AfnemenExamenMenuOption extends MenuOption {
     @Override
