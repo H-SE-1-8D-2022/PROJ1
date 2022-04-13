@@ -7,7 +7,7 @@ import nl.hhs.group8d.ui.MenuOption;
 public class ExamenResultatenMenuOption extends MenuOption {
     @Override
     public String getTitle() {
-        return "Gemaakte examens";
+        return "Gemaakte examens.";
     }
 
     @Override

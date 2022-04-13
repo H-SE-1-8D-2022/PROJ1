@@ -21,8 +21,9 @@ public class StudentenLijstMenuOption extends MenuOption {
 
         this.studentenLijst = Student.studentenLijst;
 
+
         printStudenten();
-        System.out.print("Van welke student wil je de info zien: ");
+        System.out.print("Over welke student wil u meer informatie zien: ");
 
         processInput(getUserIntInput(0, studentenLijst.size()));
 
@@ -31,14 +32,12 @@ public class StudentenLijstMenuOption extends MenuOption {
     private void processInput(int input) {
         if (input != 0) {
             printStudent(input - 1);
-
-            //Make the user say something before returning to the menu.
-            getUserIntInput();
         }
     }
 
     private void printStudenten() {
 
+        System.out.println("Studenten:");
         int i = 1;
         for (Student student : this.studentenLijst) {
             System.out.print(i++ + ". ");
@@ -60,6 +59,8 @@ public class StudentenLijstMenuOption extends MenuOption {
         System.out.println("1. Alle examens");
         System.out.println("2. Behaalde examens");
         System.out.println("0. Exit");
+
+        System.out.print("Keuze: ");
         int optie = getUserIntInput(0, 2);
         if (optie == 0) {
             return;
@@ -71,9 +72,7 @@ public class StudentenLijstMenuOption extends MenuOption {
         }
 
         System.out.println("0. exit");
-        getScanner().nextLine();
-
-
+        getUserStringInput();
     }
 
     public void getBehaaldeExamens(int nummer) {
@@ -122,6 +121,8 @@ public class StudentenLijstMenuOption extends MenuOption {
                     geslaagd = "Niet geslaagd";
                 }
                 System.out.println("[" + examenNaam + "]" + ", aantal correct: " + aantalCorrect + "/" + totaalAantal + ", " + geslaagd);
+                System.out.println("0. Exit");
+                getUserStringInput();
             }
 
         } catch (Exception e) {

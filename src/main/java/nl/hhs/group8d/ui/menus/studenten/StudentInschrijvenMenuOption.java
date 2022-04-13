@@ -21,12 +21,12 @@ public class StudentInschrijvenMenuOption extends MenuOption {
 
     private void vraagStudentInfo() {
         System.out.println("Als je wilt stoppen met student aanmaken type 0");
-        System.out.print("Vul je naam in: ");
+        System.out.print("Vul de naam in: ");
         String naam = getUserStringInput();
         if (naam.equals("0")) {
             return;
         }
-        System.out.print("Vul je studentnummer in: ");
+        System.out.print("Vul de studentnummer in: ");
         int studentNummer = getUserIntInput(0, 99999999);
         if (studentNummer == 0) {
             return;
@@ -38,6 +38,19 @@ public class StudentInschrijvenMenuOption extends MenuOption {
             }
         }
         if (geldigStudentNummer) {
+            System.out.println("Kloppen de volgende gegevens?");
+            System.out.println("Naam: "+naam);
+            System.out.println("Studentnummer: "+studentNummer);
+            System.out.println("1. ja\n0. Annuleer");
+            System.out.print("Keuze: ");
+            int input = getUserIntInput(0,1);
+            if(input == 0){
+                System.out.println("Student is niet aangemaakt.\n0. Exit");
+                getUserStringInput();
+                return;
+            }
+
+
             inschrijvenStudent(naam, studentNummer);
         } else {
             System.out.println("Studentnummer al in het systeem.");
@@ -46,6 +59,7 @@ public class StudentInschrijvenMenuOption extends MenuOption {
 
 
     private void inschrijvenStudent(String naam, int studentNummer) {
+
         Student student = new Student(naam, studentNummer);
         Student.studentenLijst.add(student);
         try (FileWriter fw = new FileWriter(Student.BESTAND, true);

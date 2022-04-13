@@ -42,6 +42,7 @@ public abstract class MenuOption {
             }
         }
 
+        System.out.println();
         return input;
     }
 
@@ -52,6 +53,7 @@ public abstract class MenuOption {
             text = getScanner().nextLine();
         }
 
+        System.out.println();
         return text;
     }
 

@@ -89,16 +89,19 @@ public class MenuManager {
             }
         }
 
-        // Return de waarde
+        // Return de waarde and add empty line between menu's
+        System.out.println();
         return answer;
     }
 
     private void printMenu() {
 
+        System.out.println("Kies een optie:");
         //Ga langs elke submenu optie en print de naam
         for (int i = 0; i < currentMenu.getMenuOptions().size(); i++) {
             System.out.println(i + 1 + ": " + currentMenu.getMenuOptions().get(i).getTitle());
         }
         System.out.println("0: Exit");
+        System.out.print("Keuze: ");
     }
 }
