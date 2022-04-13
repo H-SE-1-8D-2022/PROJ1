@@ -1,20 +1,17 @@
 package nl.hhs.group8d.vraag;
 
-public abstract class Vraag
-{
+public abstract class Vraag {
 
     private String vraag;
     private String correcteAntwoord;
 
-    public Vraag(String vraag, String correcteAntwoord)
-    {
+    public Vraag(String vraag, String correcteAntwoord) {
         this.vraag = vraag;
         this.correcteAntwoord = correcteAntwoord;
     }
 
 
-    public String getVraag()
-    {
+    public String getVraag() {
         return this.vraag;
     }
 

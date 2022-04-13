@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 class testMaakExamen {
 
     @Test
-    void maakExamenTest(){
+    void maakExamenTest() {
 
         int currentExamenAmount = Examen.examens.size();
 
@@ -25,9 +25,9 @@ class testMaakExamen {
         MaakExamenMenuOption examenMaken = new MaakExamenMenuOption();
         examenMaken.executeMenuOption();
 
-        Examen aangemaakteExamen = Examen.examens.get(Examen.examens.size()-1);
+        Examen aangemaakteExamen = Examen.examens.get(Examen.examens.size() - 1);
 
-        Assertions.assertEquals(currentExamenAmount+1, Examen.examens.size());
+        Assertions.assertEquals(currentExamenAmount + 1, Examen.examens.size());
         Assertions.assertEquals("Wiskunde Examen", aangemaakteExamen.getName());
         Assertions.assertEquals(3, aangemaakteExamen.getVragen().size());
         Assertions.assertEquals("6", aangemaakteExamen.getVragen().get(0).getCorrecteAntwoord());

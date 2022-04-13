@@ -10,11 +10,9 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 
-import static org.junit.Assert.assertNotEquals;
-
 public class TestStudentVerwijderen {
     @BeforeEach
-    public void studentAanmaken(){
+    public void studentAanmaken() {
         String input = "Stephan\n1921689\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
@@ -24,10 +22,10 @@ public class TestStudentVerwijderen {
     }
 
     @Test
-    public void studentVerwijderen(){
+    public void studentVerwijderen() {
         //Arrange
         int expectedResult = 192168;
-        String input =  "2\n0\n";
+        String input = "2\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
         StudentVerwijderenMenuOption studentVerwijderen = new StudentVerwijderenMenuOption();

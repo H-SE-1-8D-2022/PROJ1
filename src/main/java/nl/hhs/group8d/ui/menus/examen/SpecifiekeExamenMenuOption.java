@@ -1,8 +1,8 @@
 package nl.hhs.group8d.ui.menus.examen;
 
-import nl.hhs.group8d.ui.MenuOption;
 import nl.hhs.group8d.entities.Examen;
 import nl.hhs.group8d.entities.Student;
+import nl.hhs.group8d.ui.MenuOption;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -18,19 +18,19 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
     public void executeMenuOption() {
 
         Examen examen = getExamen();
-        if(examen == null) return;
+        if (examen == null) return;
         Student student = getStudent();
-        if(student == null) return;
+        if (student == null) return;
 
-        controlleerExamen(examen,student);
+        controlleerExamen(examen, student);
 
     }
 
-    private void controlleerExamen(Examen examen, Student student){
+    private void controlleerExamen(Examen examen, Student student) {
         int aantalCorrect = 0;
         int totaalAantalVragen = 0;
         boolean examenGehaald = false;
-        try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + student.getstudentNummer() + ".txt"))){
+        try (BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + student.getstudentNummer() + ".txt"))) {
             String regel;
             while ((regel = in.readLine()) != null) {
                 String[] woorden = regel.split(",");
@@ -39,7 +39,7 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
                 int totaalVragen = Integer.parseInt(woorden[2]);
                 boolean gehaald = Boolean.parseBoolean(woorden[3]);
 
-                if(gehaald && examen.getName().equals(examenNaam)){
+                if (gehaald && examen.getName().equals(examenNaam)) {
                     examenGehaald = true;
                     aantalCorrect = aantalCorrectGemaakt;
                     totaalAantalVragen = totaalVragen;
@@ -47,12 +47,12 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
                 }
 
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Deze student heeft nog geen examens gemaakt.");
         }
 
-        if(examenGehaald){
-            System.out.println(student.getNaam()+" Heeft de "+examen.getName()+" gehaald met een score van: "+aantalCorrect+"/"+totaalAantalVragen);
+        if (examenGehaald) {
+            System.out.println(student.getNaam() + " Heeft de " + examen.getName() + " gehaald met een score van: " + aantalCorrect + "/" + totaalAantalVragen);
             System.out.println("0. exit");
             getUserStringInput();
         } else {
@@ -63,13 +63,13 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
 
     }
 
-    private Examen getExamen(){
+    private Examen getExamen() {
         System.out.println("Wat is de naam van de examen die u wilt controlleren?\n0. exit");
 
-        while(true) {
+        while (true) {
             String naam = getUserStringInput();
 
-            if(naam.equals("0")) return null;
+            if (naam.equals("0")) return null;
 
             for (Examen examen : Examen.examens) {
                 if (examen.getName().toLowerCase(Locale.ROOT).equals(naam.toLowerCase())) {
@@ -80,15 +80,15 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
         }
     }
 
-    private Student getStudent(){
+    private Student getStudent() {
         System.out.println("Welke student wilt u controlleren? (Voer het studentnummer in.)\n0. exit");
 
-        while(true){
-            int studentNummer = getUserIntInput(0,99999999);
-            if(studentNummer == 0) return null;
+        while (true) {
+            int studentNummer = getUserIntInput(0, 99999999);
+            if (studentNummer == 0) return null;
 
-            for(Student student : Student.studentenLijst){
-                if(student.getstudentNummer() == studentNummer){
+            for (Student student : Student.studentenLijst) {
+                if (student.getstudentNummer() == studentNummer) {
                     return student;
                 }
             }

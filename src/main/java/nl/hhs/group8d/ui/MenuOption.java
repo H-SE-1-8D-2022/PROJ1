@@ -15,15 +15,15 @@ public abstract class MenuOption {
         return null;
     }
 
-    protected Scanner getScanner(){
+    protected Scanner getScanner() {
         return this.scanner;
     }
 
-    protected int getUserIntInput(){
+    protected int getUserIntInput() {
         return getUserIntInput(Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    protected int getUserIntInput(int min, int max){
+    protected int getUserIntInput(int min, int max) {
         boolean noValidInput = true;
         int input = -1;
 
@@ -31,7 +31,7 @@ public abstract class MenuOption {
             try {
                 input = scanner.nextInt();
 
-                if(input >= min && input <= max){
+                if (input >= min && input <= max) {
                     noValidInput = false;
                 } else {
                     System.out.println("Vul alstublieft een geldig getal in.");
@@ -45,10 +45,10 @@ public abstract class MenuOption {
         return input;
     }
 
-    protected String getUserStringInput(){
+    protected String getUserStringInput() {
         String text = getScanner().nextLine();
 
-        while (text.equals("")){
+        while (text.equals("")) {
             text = getScanner().nextLine();
         }
 

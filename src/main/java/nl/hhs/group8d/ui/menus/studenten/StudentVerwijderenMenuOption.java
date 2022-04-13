@@ -1,7 +1,7 @@
 package nl.hhs.group8d.ui.menus.studenten;
 
-import nl.hhs.group8d.ui.MenuOption;
 import nl.hhs.group8d.entities.Student;
+import nl.hhs.group8d.ui.MenuOption;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -21,10 +21,10 @@ public class StudentVerwijderenMenuOption extends MenuOption {
 
     private void vraagStudentnummer() {
         int i = 1;
-        for(Student student : Student.studentenLijst){
-            System.out.print(i+++". ");
+        for (Student student : Student.studentenLijst) {
+            System.out.print(i++ + ". ");
             System.out.print(student.getstudentNummer());
-            System.out.println(" ("+student.getNaam()+")");
+            System.out.println(" (" + student.getNaam() + ")");
 
         }
         System.out.print("Welke student wil je verwijderen: ");
@@ -33,15 +33,16 @@ public class StudentVerwijderenMenuOption extends MenuOption {
     }
 
 
-    private void verwijderStudent(Student student){
+    private void verwijderStudent(Student student) {
 
         Student.studentenLijst.remove(student);
-        try(PrintWriter writer = new PrintWriter(Student.BESTAND))
-        {writer.print("");        } catch (Exception e) {
+        try (PrintWriter writer = new PrintWriter(Student.BESTAND)) {
+            writer.print("");
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-        for(Student stud : Student.studentenLijst) {
+        for (Student stud : Student.studentenLijst) {
             try (FileWriter fw = new FileWriter(Student.BESTAND, true);
                  BufferedWriter bw = new BufferedWriter(fw);
                  PrintWriter pw = new PrintWriter(bw)) {
@@ -53,7 +54,7 @@ public class StudentVerwijderenMenuOption extends MenuOption {
 
         File bestand = new File("Studentenlijst/" + student.getstudentNummer() + ".txt");
         bestand.delete();
-        System.out.println("Student: " + student.getNaam() + " met het nummer: " + student.getstudentNummer() +  " is verwijderd.");
+        System.out.println("Student: " + student.getNaam() + " met het nummer: " + student.getstudentNummer() + " is verwijderd.");
         System.out.println("0. exit");
         getUserStringInput();
     }

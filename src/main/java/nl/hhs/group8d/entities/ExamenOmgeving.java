@@ -10,9 +10,9 @@ import java.util.Scanner;
 public class ExamenOmgeving {
     private final Student student;
     private final Examen examen;
-    private int aantalCorrect = 0;
     private final Scanner scanner = new Scanner(System.in);
     private final ArrayList<Vraag> vragen = new ArrayList<>();
+    private int aantalCorrect = 0;
 
     public ExamenOmgeving(Student student, Examen examen) {
         this.student = student;

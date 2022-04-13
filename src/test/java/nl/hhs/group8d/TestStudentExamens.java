@@ -1,7 +1,7 @@
 package nl.hhs.group8d;
 
-import nl.hhs.group8d.entities.ExamenResultaten;
 import nl.hhs.group8d.entities.Examen;
+import nl.hhs.group8d.entities.ExamenResultaten;
 import nl.hhs.group8d.entities.Student;
 import nl.hhs.group8d.vraag.OpenVraag;
 import nl.hhs.group8d.vraag.Vraag;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class TestStudentExamens {
     @Test
-    public void examenToevoegen(){
+    public void examenToevoegen() {
         int nummer = 123;
         Student student = new Student("Stephan", nummer);
         ArrayList<Vraag> vragenLijst = new ArrayList<>();
@@ -36,15 +36,16 @@ public class TestStudentExamens {
         Assertions.assertEquals(expectedResult, actualResult);
     }
 
-    private String getGemaaktExamen(int nummer){
+    private String getGemaaktExamen(int nummer) {
         String woorden = null;
-        try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))){
+        try (BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))) {
             String regel;
             while ((regel = in.readLine()) != null) {
                 woorden = regel;
             }
-        }catch(Exception e){
-            System.out.println("Vul een geldig studentnummer in!");;
+        } catch (Exception e) {
+            System.out.println("Vul een geldig studentnummer in!");
+            ;
         }
         return woorden;
     }

@@ -9,6 +9,24 @@ import java.io.ByteArrayInputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestMenuOption {
+    @Test
+    public void testMenuOption() {
+        String input = "10\n10\nTest\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        TestOption option = new TestOption(0);
+        option.executeMenuOption();
+    }
+
+    @Test
+    public void testMenuOptionFouteInput() {
+        String input = "10\n1\n10\nTest\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        TestOption option = new TestOption(0);
+        option.executeMenuOption();
+    }
+
     static class TestOption extends MenuOption {
         public int id;
 
@@ -37,23 +55,5 @@ class TestMenuOption {
             assertEquals(10, limitedInt);
             assertEquals("Test", string);
         }
-    }
-
-    @Test
-    public void testMenuOption() {
-        String input = "10\n10\nTest\n";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-        TestOption option = new TestOption(0);
-        option.executeMenuOption();
-    }
-
-    @Test
-    public void testMenuOptionFouteInput() {
-        String input = "10\n1\n10\nTest\n";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-        TestOption option = new TestOption(0);
-        option.executeMenuOption();
     }
 }

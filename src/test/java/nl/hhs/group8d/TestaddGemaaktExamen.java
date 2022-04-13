@@ -1,20 +1,21 @@
 package nl.hhs.group8d;
 
 
-import nl.hhs.group8d.entities.ExamenResultaten;
 import nl.hhs.group8d.entities.Examen;
+import nl.hhs.group8d.entities.ExamenResultaten;
 import nl.hhs.group8d.entities.Student;
 import nl.hhs.group8d.vraag.MultipleChoiceVraag;
 import nl.hhs.group8d.vraag.OpenVraag;
 import nl.hhs.group8d.vraag.Vraag;
-import org.junit.jupiter.api.Test;
-
-import java.io.*;
-import java.util.ArrayList;
-
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class TestaddGemaaktExamen {
     private int studentNummer = 0;
@@ -34,7 +35,7 @@ public class TestaddGemaaktExamen {
         ArrayList<Vraag> vragen = new ArrayList<>();
         vragen.add(vraag1);
         vragen.add(vraag2);
-        Examen examen = new Examen("Wiskunde toets", 2,vragen);
+        Examen examen = new Examen("Wiskunde toets", 2, vragen);
         ExamenResultaten examenResultaat = new ExamenResultaten(student, examen, 1);
         int actualResult = 0;
         int expectedResult = 1;
@@ -45,7 +46,7 @@ public class TestaddGemaaktExamen {
             while ((in.readLine()) != null) {
                 actualResult++;
             }
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -56,7 +57,7 @@ public class TestaddGemaaktExamen {
     }
 
     @AfterEach
-    public void verwijderBestand(){
+    public void verwijderBestand() {
         bestand1.delete();
     }
 }

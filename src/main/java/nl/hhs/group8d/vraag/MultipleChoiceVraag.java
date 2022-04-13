@@ -4,20 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class MultipleChoiceVraag extends Vraag
-{
+public class MultipleChoiceVraag extends Vraag {
+    private final List<String> alfabet = Arrays.asList("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
     private List<String> opties;
-    private final List<String> alfabet = Arrays.asList("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
 
-   public MultipleChoiceVraag(String vraag, String correctAntwoord, List<String> opties)
-   {
-       super(vraag,correctAntwoord);
-       this.opties = opties;
-   }
-
-    public List<String> getOpties()
-    {
-        return this.opties;
+    public MultipleChoiceVraag(String vraag, String correctAntwoord, List<String> opties) {
+        super(vraag, correctAntwoord);
+        this.opties = opties;
     }
 
     public void setOpties(ArrayList<String> opties) {
@@ -25,18 +18,17 @@ public class MultipleChoiceVraag extends Vraag
     }
 
     @Override
-    public void printVraag()
-    {
+    public void printVraag() {
         System.out.println(super.getVraag());
-        for (int i =0;i<opties.size();i++){
-            System.out.println(alfabet.get(i).toUpperCase() +")- " + opties.get(i));
+        for (int i = 0; i < opties.size(); i++) {
+            System.out.println(alfabet.get(i).toUpperCase() + ")- " + opties.get(i));
         }
     }
 
     @Override
-    public boolean isCorrect(String antwoord){
+    public boolean isCorrect(String antwoord) {
         int index = alfabet.indexOf(antwoord.toLowerCase());
-        if (index < 0 || index >= opties.size()){
+        if (index < 0 || index >= opties.size()) {
             // Geen valide antwoord
             return false;
         }

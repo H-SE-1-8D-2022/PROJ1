@@ -16,7 +16,7 @@ public class ExamenResultatenMenuOption extends MenuOption {
     }
 
     @Override
-    public Menu getNextSubMenu(){
+    public Menu getNextSubMenu() {
         Menu menu = new Menu();
         menu.add(new meestGehaaldMenuOption());
         menu.add(new SpecifiekeExamenMenuOption());

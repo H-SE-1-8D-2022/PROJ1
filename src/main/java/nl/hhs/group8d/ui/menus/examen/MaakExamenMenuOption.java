@@ -1,7 +1,7 @@
 package nl.hhs.group8d.ui.menus.examen;
 
-import nl.hhs.group8d.ui.MenuOption;
 import nl.hhs.group8d.entities.Examen;
+import nl.hhs.group8d.ui.MenuOption;
 import nl.hhs.group8d.vraag.MultipleChoiceVraag;
 import nl.hhs.group8d.vraag.OpenVraag;
 import nl.hhs.group8d.vraag.TrueFalseVraag;
@@ -28,16 +28,16 @@ public class MaakExamenMenuOption extends MenuOption {
         System.out.println("Hoeveel moeten er correct zijn?");
         int correct = getUserIntInput(0, aantalVragen);
 
-        for(int i = 0; i < aantalVragen; i++){
+        for (int i = 0; i < aantalVragen; i++) {
             System.out.println("Wat voor vraag is het?");
             System.out.println("1. Meerkeuzevraag");
             System.out.println("2. True/False vraag");
             System.out.println("3. open vraag");
             System.out.println("0. exit.");
 
-             int answer = getUserIntInput(0, 3);
+            int answer = getUserIntInput(0, 3);
 
-            switch(answer){
+            switch (answer) {
                 case 0: {
                     System.out.println("Examen aanmaken geannuleerd. \n0. exit");
                     getUserStringInput();
@@ -64,7 +64,7 @@ public class MaakExamenMenuOption extends MenuOption {
 
     }
 
-    private void createMeerkeuzevraag(){
+    private void createMeerkeuzevraag() {
         ArrayList<String> opties = new ArrayList<>();
 
         System.out.println("Wat is de naam van de meerkeuze vraag");
@@ -75,7 +75,7 @@ public class MaakExamenMenuOption extends MenuOption {
         System.out.println("Hoeveel mogelijke antwoorden?");
         int possiblities = getUserIntInput();
 
-        for(int i = 0; i < possiblities; i++){
+        for (int i = 0; i < possiblities; i++) {
             System.out.println("Wat is een optie?");
             opties.add(getUserStringInput());
         }
@@ -83,12 +83,12 @@ public class MaakExamenMenuOption extends MenuOption {
         vragen.add(new MultipleChoiceVraag(naam, antwoord, opties));
     }
 
-    private void createTrueFalseVraag(){
+    private void createTrueFalseVraag() {
         System.out.println("Wat is de naam van de true / false vraag?");
         String naam = getUserStringInput();
         System.out.println("Is het true of false? \n1. True \n2. False");
-        int answer = getUserIntInput(1,2);
-        if(answer == 1){
+        int answer = getUserIntInput(1, 2);
+        if (answer == 1) {
             vragen.add(new TrueFalseVraag(naam, "True"));
         } else {
             vragen.add(new TrueFalseVraag(naam, "False"));
@@ -97,7 +97,7 @@ public class MaakExamenMenuOption extends MenuOption {
 
     }
 
-    private void createOpenVraag(){
+    private void createOpenVraag() {
         System.out.println("Wat is de naam van de open vraag?");
         String naam = getUserStringInput();
         System.out.println("Wat is het juiste antwoord?");

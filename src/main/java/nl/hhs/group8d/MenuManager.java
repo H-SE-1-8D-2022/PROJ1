@@ -1,6 +1,6 @@
 package nl.hhs.group8d;
 
-import nl.hhs.group8d.ui.*;
+import nl.hhs.group8d.ui.Menu;
 import nl.hhs.group8d.ui.menus.StartMenu;
 
 import java.util.ArrayList;
@@ -10,20 +10,17 @@ import java.util.Scanner;
 public class MenuManager {
 
     private final Scanner scanner = new Scanner(System.in);
-
-
+    //Arraylist die houd alle vorige menuopties bij voor backtracking
+    private final ArrayList<Menu> listOfPreviousMenus = new ArrayList<>();
     //Arraylist houd de huidige menu opties bij
     private Menu currentMenu;
 
-    //Arraylist die houd alle vorige menuopties bij voor backtracking
-    private final ArrayList<Menu> listOfPreviousMenus = new ArrayList<>();
-
-    public void start(){
+    public void start() {
         this.currentMenu = new StartMenu();
         printMenuAndAskInput();
     }
 
-    public void printMenuAndAskInput(){
+    public void printMenuAndAskInput() {
         boolean repeat = true;
 
         while (repeat) {
@@ -32,24 +29,24 @@ public class MenuManager {
         }
     }
 
-    private boolean processUserInput(int userInput){
+    private boolean processUserInput(int userInput) {
 
         //Als de 0: exit menu is gekozen
-        if(userInput == 0){
+        if (userInput == 0) {
             //Kijken of we in de main menu zitten en zowel gwn weg gaan
-            if(listOfPreviousMenus.isEmpty()){
+            if (listOfPreviousMenus.isEmpty()) {
                 return false;
             }
 
             //De huidige menu options terug zetten naar de vorige menu opties
-            currentMenu = listOfPreviousMenus.get(listOfPreviousMenus.size() -1);
+            currentMenu = listOfPreviousMenus.get(listOfPreviousMenus.size() - 1);
             //de vorige menu opties die zijn gecloned verwijderen omdat we ze niet meer nodig hebben
-            listOfPreviousMenus.remove(listOfPreviousMenus.size()-1);
+            listOfPreviousMenus.remove(listOfPreviousMenus.size() - 1);
             return true;
         }
 
         //Een array begint met 0, maar de menu opties beginnen met 1, dus we willen de index met 1 verminderen
-        userInput-=1;
+        userInput -= 1;
 
         //Voer de code uit van de gekozen menu en sla de volgende submenu op in een variable
         currentMenu.getMenuOptions().get(userInput).executeMenuOption();
@@ -57,7 +54,7 @@ public class MenuManager {
         Menu nextMenu = currentMenu.getMenuOptions().get(userInput).getNextSubMenu();
 
         //Als er geen volgende menu opties zijn checken we voor nieuwe input
-        if(nextMenu == null){
+        if (nextMenu == null) {
             return true;
         }
 
@@ -70,11 +67,11 @@ public class MenuManager {
         return true;
     }
 
-    private int getUserInput(){
+    private int getUserInput() {
         boolean noValidAnswer = true;
         int answer = -1;
 
-        while(noValidAnswer) {
+        while (noValidAnswer) {
             try {
                 answer = scanner.nextInt();
 
@@ -96,11 +93,11 @@ public class MenuManager {
         return answer;
     }
 
-    private void printMenu(){
+    private void printMenu() {
 
         //Ga langs elke submenu optie en print de naam
-        for(int i = 0; i < currentMenu.getMenuOptions().size(); i++){
-            System.out.println(i+1 + ": "+ currentMenu.getMenuOptions().get(i).getTitle());
+        for (int i = 0; i < currentMenu.getMenuOptions().size(); i++) {
+            System.out.println(i + 1 + ": " + currentMenu.getMenuOptions().get(i).getTitle());
         }
         System.out.println("0: Exit");
     }

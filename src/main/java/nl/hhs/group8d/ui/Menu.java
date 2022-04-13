@@ -7,7 +7,7 @@ public class Menu {
 
     private final List<MenuOption> menuOptions;
 
-    public Menu(){
+    public Menu() {
         this.menuOptions = new ArrayList<>();
     }
 
@@ -15,7 +15,7 @@ public class Menu {
         return menuOptions;
     }
 
-    public void add(MenuOption menuOption){
+    public void add(MenuOption menuOption) {
         this.menuOptions.add(menuOption);
     }
 

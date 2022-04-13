@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         new Examen("test examen", 2, Arrays.asList(
                 new MultipleChoiceVraag("test vraag", "abc", Arrays.asList("abc", "def", "ghi")),
                 new MultipleChoiceVraag("test vraag 2", "ghi", Arrays.asList("abc", "def", "ghi")),

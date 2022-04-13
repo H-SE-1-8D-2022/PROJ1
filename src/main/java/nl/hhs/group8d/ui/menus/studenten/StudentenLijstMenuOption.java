@@ -1,22 +1,22 @@
 package nl.hhs.group8d.ui.menus.studenten;
 
-import nl.hhs.group8d.ui.MenuOption;
 import nl.hhs.group8d.entities.Student;
+import nl.hhs.group8d.ui.MenuOption;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
 public class StudentenLijstMenuOption extends MenuOption {
+    private ArrayList<Student> studentenLijst;
+
     @Override
     public String getTitle() {
         return "Lijst met Studenten.";
     }
 
-    private ArrayList<Student> studentenLijst;
-
     @Override
-    public void executeMenuOption(){
+    public void executeMenuOption() {
 
 
         this.studentenLijst = Student.studentenLijst;
@@ -24,12 +24,12 @@ public class StudentenLijstMenuOption extends MenuOption {
         printStudenten();
         System.out.print("Van welke student wil je de info zien: ");
 
-        processInput( getUserIntInput(0, studentenLijst.size()) );
+        processInput(getUserIntInput(0, studentenLijst.size()));
 
     }
 
-    private void processInput(int input){
-        if(input == 0){
+    private void processInput(int input) {
+        if (input == 0) {
             return;
         } else {
             printStudent(input - 1);
@@ -39,13 +39,13 @@ public class StudentenLijstMenuOption extends MenuOption {
         }
     }
 
-    private void printStudenten(){
+    private void printStudenten() {
 
         int i = 1;
-        for(Student student : this.studentenLijst){
-            System.out.print(i+++". ");
+        for (Student student : this.studentenLijst) {
+            System.out.print(i++ + ". ");
             System.out.print(student.getstudentNummer());
-            System.out.println(" ("+student.getNaam()+")");
+            System.out.println(" (" + student.getNaam() + ")");
 
         }
 
@@ -53,7 +53,7 @@ public class StudentenLijstMenuOption extends MenuOption {
 
     }
 
-    private void printStudent(int index){
+    private void printStudent(int index) {
         Student student = studentenLijst.get(index);
 
         System.out.println("Naam: " + student.getNaam());
@@ -62,15 +62,13 @@ public class StudentenLijstMenuOption extends MenuOption {
         System.out.println("1. Alle examens");
         System.out.println("2. Behaalde examens");
         System.out.println("0. Exit");
-        int optie = getUserIntInput(0,2);
-        if(optie == 0){
+        int optie = getUserIntInput(0, 2);
+        if (optie == 0) {
             return;
-        }
-        else if(optie == 1){
+        } else if (optie == 1) {
             getStudentInfo(student.getstudentNummer());
 
-        }
-        else if(optie == 2){
+        } else if (optie == 2) {
             getBehaaldeExamens(student.getstudentNummer());
         }
 
@@ -80,8 +78,8 @@ public class StudentenLijstMenuOption extends MenuOption {
 
     }
 
-    public void getBehaaldeExamens(int nummer){
-        try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))){
+    public void getBehaaldeExamens(int nummer) {
+        try (BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))) {
             String regel;
             boolean behaaldExamen = false;
             System.out.println("Gemaakte examens: ");
@@ -92,25 +90,25 @@ public class StudentenLijstMenuOption extends MenuOption {
                 int aantalCorrect = Integer.parseInt(woorden[1]);
                 int totaalAantal = Integer.parseInt(woorden[2]);
                 boolean uitslag = Boolean.parseBoolean(woorden[3]);
-                if(uitslag){
+                if (uitslag) {
                     geslaagd = "Geslaagd";
                     System.out.println("[" + examenNaam + "]" + ", aantal correct: " + aantalCorrect + "/" + totaalAantal + ", " + geslaagd);
                     behaaldExamen = true;
                 }
 
-                if(!behaaldExamen){
+                if (!behaaldExamen) {
                     System.out.println("Deze student heeft nog geen examens gehaald.");
                 }
 
             }
 
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Deze student heeft nog geen examens gemaakt.");
         }
     }
 
-    public void getStudentInfo(int nummer){
-        try(BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))){
+    public void getStudentInfo(int nummer) {
+        try (BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + nummer + ".txt"))) {
             String regel;
             System.out.println("Gemaakte examens: ");
             while ((regel = in.readLine()) != null) {
@@ -120,16 +118,15 @@ public class StudentenLijstMenuOption extends MenuOption {
                 int aantalCorrect = Integer.parseInt(woorden[1]);
                 int totaalAantal = Integer.parseInt(woorden[2]);
                 boolean uitslag = Boolean.parseBoolean(woorden[3]);
-                if(uitslag){
+                if (uitslag) {
                     geslaagd = "Geslaagd";
-                }
-                else{
+                } else {
                     geslaagd = "Niet geslaagd";
                 }
                 System.out.println("[" + examenNaam + "]" + ", aantal correct: " + aantalCorrect + "/" + totaalAantal + ", " + geslaagd);
             }
 
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Deze student heeft nog geen examens gemaakt.");
         }
     }

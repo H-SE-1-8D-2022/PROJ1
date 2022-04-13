@@ -1,7 +1,7 @@
 package nl.hhs.group8d.ui.menus.examen;
 
-import nl.hhs.group8d.ui.MenuOption;
 import nl.hhs.group8d.entities.Student;
+import nl.hhs.group8d.ui.MenuOption;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,10 +21,10 @@ public class meestGehaaldMenuOption extends MenuOption {
         meestGehaald();
     }
 
-    private void meestGehaald(){
+    private void meestGehaald() {
         ArrayList<Student> besteStudenten = new ArrayList<>();
         int hoogsteAantal = 0;
-        for(Student student : studentenLijst) {
+        for (Student student : studentenLijst) {
             try (BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + student.getstudentNummer() + ".txt"))) {
                 String regel;
                 int aantalGehaald = 0;
@@ -35,19 +35,18 @@ public class meestGehaaldMenuOption extends MenuOption {
                         aantalGehaald++;
                     }
                 }
-                if(aantalGehaald > hoogsteAantal){
+                if (aantalGehaald > hoogsteAantal) {
                     hoogsteAantal = aantalGehaald;
                     besteStudenten.clear();
                     besteStudenten.add(student);
-                }
-                else if(aantalGehaald == hoogsteAantal){
+                } else if (aantalGehaald == hoogsteAantal) {
                     besteStudenten.add(student);
                 }
 
             } catch (Exception e) {
             }
         }
-        for(Student student : besteStudenten) {
+        for (Student student : besteStudenten) {
             System.out.println(student.getNaam() + " heeft " + hoogsteAantal + " examens gehaald.");
         }
 
@@ -56,7 +55,6 @@ public class meestGehaaldMenuOption extends MenuOption {
 
 
     }
-
 
 
 }

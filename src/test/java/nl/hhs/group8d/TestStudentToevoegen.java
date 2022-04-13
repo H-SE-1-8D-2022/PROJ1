@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 
 public class TestStudentToevoegen {
     @Test
-    public void studentToevoegen(){
+    public void studentToevoegen() {
         //Arrange
         Student expectedResult = new Student("Stephan", 147852);
         String input = "Stephan\n147852\n0\n";
@@ -31,14 +31,13 @@ public class TestStudentToevoegen {
     }
 
     @AfterEach
-    public void verwijderStudent(){
+    public void verwijderStudent() {
         String input = Student.studentenLijst.size() + "\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
         StudentVerwijderenMenuOption studentVerwijderen = new StudentVerwijderenMenuOption();
         studentVerwijderen.executeMenuOption();
     }
-
 
 
 }

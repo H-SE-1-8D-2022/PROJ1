@@ -5,12 +5,11 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
 public class testVanIsCorrect {
     @Test
-    public void isCorrect()
-    {
+    public void isCorrect() {
         ArrayList<String> opties = new ArrayList<>();
         opties.add("Drie");
         opties.add("twee");

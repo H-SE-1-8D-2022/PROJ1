@@ -2,8 +2,7 @@ package nl.hhs.group8d.vraag;
 
 import java.util.ArrayList;
 
-public class TrueFalseVraag extends MultipleChoiceVraag
-{
+public class TrueFalseVraag extends MultipleChoiceVraag {
     public TrueFalseVraag(String vraag, String correctAntwoord) {
         super(vraag, correctAntwoord, null);
 
@@ -11,7 +10,7 @@ public class TrueFalseVraag extends MultipleChoiceVraag
         a.add("True");
         a.add("False");
 
-      super.setOpties(a);
+        super.setOpties(a);
     }
 
 }

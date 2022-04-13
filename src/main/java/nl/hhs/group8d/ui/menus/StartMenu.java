@@ -4,7 +4,7 @@ import nl.hhs.group8d.ui.Menu;
 
 public class StartMenu extends Menu {
 
-    public StartMenu(){
+    public StartMenu() {
         super();
 
         add(new StudentMenuOption());
