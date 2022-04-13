@@ -29,9 +29,7 @@ public class StudentenLijstMenuOption extends MenuOption {
     }
 
     private void processInput(int input) {
-        if (input == 0) {
-            return;
-        } else {
+        if (input != 0) {
             printStudent(input - 1);
 
             //Make the user say something before returning to the menu.
@@ -84,7 +82,7 @@ public class StudentenLijstMenuOption extends MenuOption {
             boolean behaaldExamen = false;
             System.out.println("Gemaakte examens: ");
             while ((regel = in.readLine()) != null) {
-                String geslaagd = "";
+                String geslaagd;
                 String[] woorden = regel.split(",");
                 String examenNaam = woorden[0];
                 int aantalCorrect = Integer.parseInt(woorden[1]);
@@ -112,7 +110,7 @@ public class StudentenLijstMenuOption extends MenuOption {
             String regel;
             System.out.println("Gemaakte examens: ");
             while ((regel = in.readLine()) != null) {
-                String geslaagd = "";
+                String geslaagd;
                 String[] woorden = regel.split(",");
                 String examenNaam = woorden[0];
                 int aantalCorrect = Integer.parseInt(woorden[1]);

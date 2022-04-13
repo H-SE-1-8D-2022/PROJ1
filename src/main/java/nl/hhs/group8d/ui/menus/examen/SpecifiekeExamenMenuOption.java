@@ -26,6 +26,7 @@ public class SpecifiekeExamenMenuOption extends MenuOption {
 
     }
 
+    @SuppressWarnings("IfStatementWithIdenticalBranches")
     private void controlleerExamen(Examen examen, Student student) {
         int aantalCorrect = 0;
         int totaalAantalVragen = 0;

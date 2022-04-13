@@ -45,7 +45,6 @@ public class TestStudentExamens {
             }
         } catch (Exception e) {
             System.out.println("Vul een geldig studentnummer in!");
-            ;
         }
         return woorden;
     }

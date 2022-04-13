@@ -28,7 +28,7 @@ class TestMenuOption {
     }
 
     static class TestOption extends MenuOption {
-        public int id;
+        public final int id;
 
         public TestOption(int id) {
             this.id = id;

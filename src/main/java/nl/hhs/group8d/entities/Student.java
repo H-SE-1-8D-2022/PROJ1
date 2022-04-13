@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class Student {
     public final static String BESTAND = "Student.txt";
     public final static ArrayList<Student> studentenLijst = getStudentenLijst();
-    private String naam;
-    private int studentNummer;
+    private final String naam;
+    private final int studentNummer;
 
 
     public Student(String naam, int studentNummer) {

@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Examen {
-    public static ArrayList<Examen> examens = new ArrayList<>();
-    private String name;
-    private Integer aantalCorrectNodig;
-    private List<Vraag> vragen;
+    public static final ArrayList<Examen> examens = new ArrayList<>();
+    private final String name;
+    private final Integer aantalCorrectNodig;
+    private final List<Vraag> vragen;
 
     public Examen(String name, Integer aantalCorrectNodig, List<Vraag> vragenN) {
         this.name = name;

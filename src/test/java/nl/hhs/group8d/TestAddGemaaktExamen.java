@@ -17,9 +17,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TestaddGemaaktExamen {
-    private int studentNummer = 0;
-    private File bestand1 = new File("Studentenlijst/" + studentNummer + ".txt");
+public class TestAddGemaaktExamen {
+    private final int studentNummer = 0;
+    private final File bestand1 = new File("Studentenlijst/" + studentNummer + ".txt");
 
 
     @Test

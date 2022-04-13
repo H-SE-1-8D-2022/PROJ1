@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class MaakExamenMenuOption extends MenuOption {
 
-    private ArrayList<Vraag> vragen = new ArrayList<>();
+    private final ArrayList<Vraag> vragen = new ArrayList<>();
 
     @Override
     public String getTitle() {

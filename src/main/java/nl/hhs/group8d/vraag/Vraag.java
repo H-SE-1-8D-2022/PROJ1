@@ -2,8 +2,8 @@ package nl.hhs.group8d.vraag;
 
 public abstract class Vraag {
 
-    private String vraag;
-    private String correcteAntwoord;
+    private final String vraag;
+    private final String correcteAntwoord;
 
     public Vraag(String vraag, String correcteAntwoord) {
         this.vraag = vraag;

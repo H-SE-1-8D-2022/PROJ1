@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 
-class testMaakExamen {
+class TestMaakExamen {
 
     @Test
     void maakExamenTest() {

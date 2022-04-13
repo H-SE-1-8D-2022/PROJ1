@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 class TestExamenOmgeving {
-    private static Examen testExamen = new Examen("test examen", 2, Arrays.asList(
+    private static final Examen testExamen = new Examen("test examen", 2, Arrays.asList(
             new MultipleChoiceVraag("test vraag", "abc", Arrays.asList("abc", "def", "ghi")),
             new MultipleChoiceVraag("test vraag 2", "ghi", Arrays.asList("abc", "def", "ghi")),
             new OpenVraag("test vraag 3", "qwerty")
