@@ -25,7 +25,7 @@ public class TestStudentVerwijderen {
     public void studentVerwijderen() {
         //Arrange
         int expectedResult = 192168;
-        String input = "2\n0\n";
+        String input = "2\n1\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
         StudentVerwijderenMenuOption studentVerwijderen = new StudentVerwijderenMenuOption();

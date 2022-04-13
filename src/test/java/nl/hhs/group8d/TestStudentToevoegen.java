@@ -16,7 +16,7 @@ public class TestStudentToevoegen {
     public void studentToevoegen() {
         //Arrange
         Student expectedResult = new Student("Stephan", 147852);
-        String input = "Stephan\n147852\n0\n";
+        String input = "Stephan\n147852\n1\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
         StudentInschrijvenMenuOption studentInschrijven = new StudentInschrijvenMenuOption();
@@ -32,7 +32,7 @@ public class TestStudentToevoegen {
 
     @AfterEach
     public void verwijderStudent() {
-        String input = Student.studentenLijst.size() + "\n0\n";
+        String input = Student.studentenLijst.size() + "\n1\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
         StudentVerwijderenMenuOption studentVerwijderen = new StudentVerwijderenMenuOption();
