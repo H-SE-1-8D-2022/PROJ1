@@ -22,7 +22,7 @@ public class TestaddGemaaktExamen {
 
 
     @Test
-    public void addGemaaktExamen(){
+    public void addGemaaktExamenCreatie(){
         //Arrange
         Student student = new Student("Harry", studentNummer);
         Vraag vraag1 = new OpenVraag("Hoeveel is 5+5", "10");
