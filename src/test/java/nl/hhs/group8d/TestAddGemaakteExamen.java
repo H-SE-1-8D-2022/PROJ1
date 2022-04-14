@@ -6,7 +6,6 @@ import nl.hhs.group8d.entities.ExamenResultaten;
 import nl.hhs.group8d.entities.Student;
 import nl.hhs.group8d.vraag.MultipleChoiceVraag;
 import nl.hhs.group8d.vraag.OpenVraag;
-import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,7 +20,7 @@ import java.util.Arrays;
 public class TestAddGemaakteExamen {
 
     private Student student;
-    private File bestand1;
+    private File bestand;
     private Examen testExamen;
 
     /**
@@ -31,7 +30,7 @@ public class TestAddGemaakteExamen {
     @BeforeEach
     public void setup(){
         student = new Student("Harry", 0);
-        bestand1 = new File("Studentenlijst/" + student.getstudentNummer() + ".txt");
+        bestand = new File("Studentenlijst/" + student.getstudentNummer() + ".txt");
         testExamen = new Examen("test examen", 2, Arrays.asList(
                 new MultipleChoiceVraag("test vraag", "abc", Arrays.asList("abc", "def", "ghi")),
                 new MultipleChoiceVraag("test vraag 2", "ghi", Arrays.asList("abc", "def", "ghi")),
@@ -53,7 +52,7 @@ public class TestAddGemaakteExamen {
         student.addGemaakteExamen(examenResultaat);
 
         //Assert
-        Assertions.assertTrue(bestand1.exists());
+        Assertions.assertTrue(bestand.exists());
     }
 
     /**
@@ -84,6 +83,6 @@ public class TestAddGemaakteExamen {
 
     @AfterEach
     public void verwijderBestand() {
-        bestand1.delete();
+        bestand.delete();
     }
 }
