@@ -15,12 +15,20 @@ import java.util.Arrays;
 import java.util.Random;
 
 class TestExamenOmgeving {
+    /**
+     * Voorbeel examen met 3 vragen en minimaal 2 goed
+     */
     private static final Examen testExamen = new Examen("test examen", 2, Arrays.asList(
             new MultipleChoiceVraag("test vraag", "abc", Arrays.asList("abc", "def", "ghi")),
             new MultipleChoiceVraag("test vraag 2", "ghi", Arrays.asList("abc", "def", "ghi")),
             new OpenVraag("test vraag 3", "qwerty")
     ));
 
+    /**
+     * Test examen met alle 3 de juiste antwoorden
+     * - Aantal correct = 3
+     * - Gehaald = true
+     */
     @Test
     void testExamenOmgeving() {
         Student student = Student.studentenLijst.get(0);
@@ -37,6 +45,11 @@ class TestExamenOmgeving {
         Assertions.assertTrue(results.heeftGehaald());
     }
 
+    /**
+     * Test examen met 1 fout antwoord
+     * - Aantal correct = 2
+     * - Gehaald = true
+     */
     @Test
     void testExamenOmgeving1Fout() {
         Student student = Student.studentenLijst.get(0);
@@ -53,6 +66,11 @@ class TestExamenOmgeving {
         Assertions.assertTrue(results.heeftGehaald());
     }
 
+    /**
+     * Test examen met 3 foute antwoorden
+     * - Aantal correct = 0
+     * - Gehaald = false
+     */
     @Test
     void testExamenOmgevingAllesFout() {
         Student student = Student.studentenLijst.get(0);
