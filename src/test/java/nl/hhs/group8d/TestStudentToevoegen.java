@@ -27,7 +27,7 @@ public class TestStudentToevoegen {
 
         studentInschrijven.executeMenuOption();
         Student actualResult = Student.studentenLijst.get(Student.studentenLijst.size() - 1);
-        
+
         Assertions.assertEquals(expectedResult.getNaam(), actualResult.getNaam());
         Assertions.assertEquals(expectedResult.getstudentNummer(), actualResult.getstudentNummer());
     }

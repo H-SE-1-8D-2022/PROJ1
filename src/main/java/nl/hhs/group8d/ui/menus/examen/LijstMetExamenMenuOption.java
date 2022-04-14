@@ -26,8 +26,8 @@ public class LijstMetExamenMenuOption extends MenuOption {
     private void krijgLijstMetExamens() {
         System.out.println("Er zijn "+Examen.examens.size()+" examens.");
         System.out.println("Examens:");
-        for (int peo = 0; peo < Examen.examens.size(); peo++) {
-            System.out.println("- " + Examen.examens.get(peo).getName());
+        for (int i = 0; i < Examen.examens.size(); i++) {
+            System.out.println("- " + Examen.examens.get(i).getName());
         }
         System.out.println("0. exit");
         getUserIntInput();

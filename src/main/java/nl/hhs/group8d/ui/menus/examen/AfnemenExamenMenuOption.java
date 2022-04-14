@@ -47,9 +47,9 @@ public class AfnemenExamenMenuOption extends MenuOption {
         System.out.println("Vul studentnummer in: ");
         System.out.print("Studentnummer: ");
         int studentnummer = getUserIntInput(0, 99999999);
-        for (int lsn = 0; lsn < Student.studentenLijst.size(); lsn++) {
-            if (studentnummer == Student.studentenLijst.get(lsn).getstudentNummer()) {
-                return Student.studentenLijst.get(lsn);
+        for (int i = 0; i < Student.studentenLijst.size(); i++) {
+            if (studentnummer == Student.studentenLijst.get(i).getstudentNummer()) {
+                return Student.studentenLijst.get(i);
             }
         }
         System.out.println("Dit studentnummer staat niet in het systeem.\n0. exit");
@@ -59,8 +59,8 @@ public class AfnemenExamenMenuOption extends MenuOption {
 
     private void printExamenOpties() {
         System.out.println("Welke examen wilt u afnemen?");
-        for (int peo = 0; peo < Examen.examens.size(); peo++) {
-            System.out.println((peo + 1) + ". " + Examen.examens.get(peo).getName());
+        for (int i = 0; i < Examen.examens.size(); i++) {
+            System.out.println((i + 1) + ". " + Examen.examens.get(i).getName());
         }
         System.out.println("0. exit");
     }

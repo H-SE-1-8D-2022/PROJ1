@@ -17,16 +17,12 @@ public class Student {
     }
 
     private static ArrayList<Student> getStudentenLijst() {
-        int stnummer;
         ArrayList<Student> studentenLijst = new ArrayList<>();
-
         try (BufferedReader in = new BufferedReader(new FileReader(Student.BESTAND))) {
             String regel;
             while ((regel = in.readLine()) != null) {
                 String[] woorden = regel.split(",");
-                String naam = woorden[0];
-                stnummer = Integer.parseInt(woorden[1]);
-                Student student = new Student(naam, stnummer);
+                Student student = new Student(woorden[0], Integer.parseInt(woorden[1]));
                 studentenLijst.add(student);
             }
         } catch (Exception e) {
