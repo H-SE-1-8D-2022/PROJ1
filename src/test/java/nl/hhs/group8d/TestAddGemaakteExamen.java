@@ -6,8 +6,10 @@ import nl.hhs.group8d.entities.ExamenResultaten;
 import nl.hhs.group8d.entities.Student;
 import nl.hhs.group8d.vraag.MultipleChoiceVraag;
 import nl.hhs.group8d.vraag.OpenVraag;
+import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
@@ -18,13 +20,24 @@ import java.util.Arrays;
 
 public class TestAddGemaakteExamen {
 
-    private final Student student = new Student("Harry", 0);
-    private final File bestand1 = new File("Studentenlijst/" + student.getstudentNummer() + ".txt");
-    private static final Examen testExamen = new Examen("test examen", 2, Arrays.asList(
-            new MultipleChoiceVraag("test vraag", "abc", Arrays.asList("abc", "def", "ghi")),
-            new MultipleChoiceVraag("test vraag 2", "ghi", Arrays.asList("abc", "def", "ghi")),
-            new OpenVraag("test vraag 3", "qwerty")
-    ));
+    private Student student;
+    private File bestand1;
+    private Examen testExamen;
+
+    /**
+     * Setup voor de variable student, bestand1 en testExamen.
+     */
+
+    @BeforeEach
+    public void setup(){
+        student = new Student("Harry", 0);
+        bestand1 = new File("Studentenlijst/" + student.getstudentNummer() + ".txt");
+        testExamen = new Examen("test examen", 2, Arrays.asList(
+                new MultipleChoiceVraag("test vraag", "abc", Arrays.asList("abc", "def", "ghi")),
+                new MultipleChoiceVraag("test vraag 2", "ghi", Arrays.asList("abc", "def", "ghi")),
+                new OpenVraag("test vraag 3", "qwerty")
+        ));
+    }
 
     /**
      * Deze test controleert of het bestand op de juiste plek wordt aangemaakt en met de juiste naam.
