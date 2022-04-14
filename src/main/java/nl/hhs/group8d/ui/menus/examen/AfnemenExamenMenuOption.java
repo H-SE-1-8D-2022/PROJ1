@@ -45,6 +45,7 @@ public class AfnemenExamenMenuOption extends MenuOption {
 
     private Student vraagStudent() {
         System.out.println("Vul studentnummer in: ");
+        System.out.print("Studentnummer: ");
         int studentnummer = getUserIntInput(0, 99999999);
         for (int lsn = 0; lsn < Student.studentenLijst.size(); lsn++) {
             if (studentnummer == Student.studentenLijst.get(lsn).getstudentNummer()) {
