@@ -78,9 +78,9 @@ public class MaakExamenMenuOption extends MenuOption {
         System.out.print("Antwoord: ");
         String antwoord = getUserStringInput();
 
-        System.out.println("Hoeveel mogelijke antwoorden?");
+        System.out.println("Hoeveel mogelijke antwoorden? (Maximaal 26)");
         System.out.print("Aantal: ");
-        int possiblities = getUserIntInput();
+        int possiblities = getUserIntInput(1,26);
 
         for (int i = 0; i < possiblities; i++) {
             System.out.println("Wat is een antwoord optie? (Het juiste antwoord moet ook worden ingezet.)");
