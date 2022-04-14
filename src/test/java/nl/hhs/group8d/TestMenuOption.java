@@ -9,6 +9,9 @@ import java.io.ByteArrayInputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestMenuOption {
+    /**
+     * Test of getUserIntInput en getUserStringInput werken
+     */
     @Test
     public void testMenuOption() {
         String input = "10\n10\nTest\n";
@@ -18,6 +21,10 @@ class TestMenuOption {
         option.executeMenuOption();
     }
 
+    /**
+     * Test of getUserIntInput(int, int) opnieuw input vraagt als de
+     * gebruiker een ongeldige waarde invoert
+     */
     @Test
     public void testMenuOptionFouteInput() {
         String input = "10\n1\n10\nTest\n";
@@ -27,6 +34,9 @@ class TestMenuOption {
         option.executeMenuOption();
     }
 
+    /**
+     * Voorbeeld class om MenuOptions te testen
+     */
     static class TestOption extends MenuOption {
         public final int id;
 
