@@ -13,6 +13,7 @@ class TestMaakExamen {
     /**
      * Deze test word gebruikt om het aanmaken van een test via de user interface te testen.
      * We maken een examen aan en testen daarna of de examen is toegevoegd aan de local arraylist en of de hoeveelheid vragen kloppen met de juiste antwoorden.
+     * Deze test wordt gedaan om te kijken of het aanmaken van een examen vanuit de app goed verloopt en geen problemen heeft.
      */
     @Test
     void maakExamenTest() {
