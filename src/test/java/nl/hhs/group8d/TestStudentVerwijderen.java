@@ -11,6 +11,12 @@ import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 
 public class TestStudentVerwijderen {
+    /**
+     * studentVerwijderen test of een student uit de studentLijst verwijderd is.
+     * De BeforeEach voegt een student toe aan de studentLijst. Daarna verwijderd de studentVerwijderen method de student weer uit de lijst.
+     * Hij controleert dit door te kijken of de laatst aangemaakte student niet meer gelijk is aan de student die in de BeforeEach is aangemaakt.
+     */
+
     @BeforeEach
     public void studentAanmaken() {
         String input = "Stephan\n1921689\n1\n0\n";

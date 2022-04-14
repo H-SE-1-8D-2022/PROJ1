@@ -41,17 +41,15 @@ public class TestAddGemaakteExamen {
     /**
      * Deze test controleert of het bestand op de juiste plek wordt aangemaakt en met de juiste naam.
      * Hij maakt een test resultaat van een examen aan en controleert daarna of er door addGemaakteExamen een bestand is aangemaakt.
+     * Deze test word gedaan omdat als een examenresultaat niet de juiste naam heeft het niet gaat werken in andere classes.
      */
 
     @Test
     public void addGemaaktExamen_bestandCreatie(){
-        //Arrange
         ExamenResultaten examenResultaat = new ExamenResultaten(student, testExamen, 1);
 
-        //Act
         student.addGemaakteExamen(examenResultaat);
 
-        //Assert
         Assertions.assertTrue(bestand.exists());
     }
 
@@ -61,12 +59,10 @@ public class TestAddGemaakteExamen {
      */
     @Test
     public void addGemaaktExamen_naarBestandSchrijven(){
-        //Arrange
         ExamenResultaten examenResultaat = new ExamenResultaten(student, testExamen, 1);
         int actualResult = 0;
         int expectedResult = 1;
 
-        //Act
         student.addGemaakteExamen(examenResultaat);
         try (BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + student.getstudentNummer() + ".txt"))) {
             while ((in.readLine()) != null) {
@@ -76,7 +72,6 @@ public class TestAddGemaakteExamen {
             e.printStackTrace();
         }
 
-        //Assert
         Assertions.assertEquals(expectedResult, actualResult);
 
     }

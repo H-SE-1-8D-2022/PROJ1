@@ -50,6 +50,10 @@ public class MeestGehaaldMenuOption extends MenuOption {
             System.out.println(student.getNaam() + " heeft " + hoogsteAantal + " examens gehaald.");
         }
 
+        if(besteStudenten.size() == 0){
+            System.out.println("Er zijn nog geen examen's gemaakt.");
+        }
+
         System.out.println("0. exit");
         getUserIntInput();
 
