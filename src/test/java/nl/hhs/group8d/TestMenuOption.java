@@ -9,6 +9,13 @@ import java.io.ByteArrayInputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TestMenuOption {
+
+    /**
+     * De volgende set van testen worden uitgevoerd omdat deze functies door elke MenuOption worden gebruikt om informatie
+     * te krijgen van de end user, als er iets mis gaat in deze functies gaat het mis in elk ander gedeelte van de app.
+     */
+
+
     /**
      * Test of getUserIntInput en getUserStringInput werken
      */

@@ -28,6 +28,9 @@ class TestExamenOmgeving {
      * Test examen met alle 3 de juiste antwoorden
      * - Aantal correct = 3
      * - Gehaald = true
+     *
+     * Deze test word uitgevoerd omdat dit één van de belangerijkste functie is in de app,
+     * als het uitvoeren van een examen niet soepel verloopt is er iets goed mis.
      */
     @Test
     void testExamenOmgeving() {
@@ -49,6 +52,8 @@ class TestExamenOmgeving {
      * Test examen met 1 fout antwoord
      * - Aantal correct = 2
      * - Gehaald = true
+     *
+     * Net als de test hierboven wordt deze test uitgevoerd omdat dit een heel belangrijk functie is om goed te hebben werken.
      */
     @Test
     void testExamenOmgeving1Fout() {
