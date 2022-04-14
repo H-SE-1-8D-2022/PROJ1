@@ -12,7 +12,7 @@ class TestMenuOption {
 
     /**
      * De volgende set van testen worden uitgevoerd omdat deze functies door elke MenuOption worden gebruikt om informatie
-     * te krijgen van de end user, als er iets mis gaat in deze functies gaat het mis in elk ander gedeelte van de app.
+     * te krijgen van de end user. Als er iets mis gaat in de functie, gaat het fout in elk ander deel van de app.
      */
 
 

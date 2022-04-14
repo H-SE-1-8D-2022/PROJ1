@@ -41,7 +41,7 @@ public class TestAddGemaakteExamen {
     /**
      * Deze test controleert of het bestand op de juiste plek wordt aangemaakt en met de juiste naam.
      * Hij maakt een test resultaat van een examen aan en controleert daarna of er door addGemaakteExamen een bestand is aangemaakt.
-     * Deze test word gedaan omdat als een examenresultaat niet de juiste naam heeft het niet gaat werken in andere classes.
+     * Deze test wordt gedaan omdat als een examenresultaat niet de juiste naam heeft het niet gaat werken in andere classes.
      */
 
     @Test
