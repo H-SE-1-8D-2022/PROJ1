@@ -16,16 +16,15 @@ public class StudentVerwijderenMenuOption extends MenuOption {
 
     @Override
     public void executeMenuOption() {
-        vraagStudentnummer();
+        verwijderStudent(vraagStudent());
     }
 
-    private void vraagStudentnummer() {
+    private Student vraagStudent() {
         int i = 1;
         for (Student student : Student.studentenLijst) {
             System.out.print(i++ + ". ");
             System.out.print(student.getstudentNummer());
             System.out.println(" (" + student.getNaam() + ")");
-
         }
         System.out.print("Welke student wil je verwijderen: ");
         int keuze = getUserIntInput();
@@ -36,14 +35,13 @@ public class StudentVerwijderenMenuOption extends MenuOption {
         if(getUserIntInput(0,1) == 0){
             System.out.println("Student is niet verwijderd.\n0. Exit");
             getUserStringInput();
-            return;
+            return null;
         }
-        verwijderStudent(Student.studentenLijst.get(keuze - 1));
+        return Student.studentenLijst.get(keuze - 1);
     }
-
-
+    
     private void verwijderStudent(Student student) {
-
+        if(student == null) return;
         Student.studentenLijst.remove(student);
         try (PrintWriter writer = new PrintWriter(Student.BESTAND)) {
             writer.print("");

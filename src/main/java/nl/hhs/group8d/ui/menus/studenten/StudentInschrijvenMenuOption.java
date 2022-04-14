@@ -16,20 +16,20 @@ public class StudentInschrijvenMenuOption extends MenuOption {
 
     @Override
     public void executeMenuOption() {
-        vraagStudentInfo();
+        inschrijvenStudent(vraagStudentInfo());
     }
 
-    private void vraagStudentInfo() {
+    private Student vraagStudentInfo() {
         System.out.println("Als je wilt stoppen met student aanmaken type 0");
         System.out.print("Vul de naam in: ");
         String naam = getUserStringInput();
         if (naam.equals("0")) {
-            return;
+            return null;
         }
         System.out.print("Vul de studentnummer in: ");
         int studentNummer = getUserIntInput(0, 99999999);
         if (studentNummer == 0) {
-            return;
+            return null;
         }
         boolean geldigStudentNummer = true;
         for (Student student : Student.studentenLijst) {
@@ -47,25 +47,25 @@ public class StudentInschrijvenMenuOption extends MenuOption {
             if(input == 0){
                 System.out.println("Student is niet aangemaakt.\n0. Exit");
                 getUserStringInput();
-                return;
+                return null;
             }
 
 
-            inschrijvenStudent(naam, studentNummer);
+            return new Student(naam, studentNummer);
         } else {
             System.out.println("Studentnummer al in het systeem.");
         }
+        return null;
     }
 
 
-    private void inschrijvenStudent(String naam, int studentNummer) {
-
-        Student student = new Student(naam, studentNummer);
+    private void inschrijvenStudent(Student student) {
+        if(student == null) return;
         Student.studentenLijst.add(student);
         try (FileWriter fw = new FileWriter(Student.BESTAND, true);
              BufferedWriter bw = new BufferedWriter(fw);
              PrintWriter pw = new PrintWriter(bw)) {
-            pw.println(naam + "," + studentNummer);
+            pw.println(student.getNaam() + "," + student.getstudentNummer());
             System.out.println("Student account aangemaakt");
             System.out.println("0. exit");
             getUserStringInput();
