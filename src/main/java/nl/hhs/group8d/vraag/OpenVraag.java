@@ -13,6 +13,7 @@ public class OpenVraag extends Vraag {
     @Override
     public void printVraag() {
         System.out.println(super.getVraag());
+        System.out.print("Antwoord: ");
     }
 
     @Override

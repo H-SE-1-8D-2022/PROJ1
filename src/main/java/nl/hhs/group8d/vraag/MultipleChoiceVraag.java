@@ -23,6 +23,7 @@ public class MultipleChoiceVraag extends Vraag {
         for (int i = 0; i < opties.size(); i++) {
             System.out.println(alfabet.get(i).toUpperCase() + ")- " + opties.get(i));
         }
+        System.out.print("Antwoord: ");
     }
 
     @Override
