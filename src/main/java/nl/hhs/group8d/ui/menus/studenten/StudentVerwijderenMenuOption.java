@@ -33,7 +33,7 @@ public class StudentVerwijderenMenuOption extends MenuOption {
         System.out.println("Weet u het zeker dat u "+Student.studentenLijst.get(keuze-1).getNaam()+" wilt verwijderen uit het systeem?");
         System.out.println("1. Ja.\n0. Annuleer.");
         System.out.print("Keuze: ");
-        if(getUserIntInput(0,1) == 1){
+        if(getUserIntInput(0,1) == 0){
             System.out.println("Student is niet verwijderd.\n0. Exit");
             getUserStringInput();
             return;

@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 public class TestStudentVerwijderen {
     @BeforeEach
     public void studentAanmaken() {
-        String input = "Stephan\n1921689\n0\n";
+        String input = "Stephan\n1921689\n1\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
 
@@ -25,7 +25,7 @@ public class TestStudentVerwijderen {
     public void studentVerwijderen() {
         //Arrange
         int expectedResult = 192168;
-        String input = "2\n1\n0\n";
+        String input = Student.studentenLijst.size() + "\n1\n0\n";
         ByteArrayInputStream byteStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
         System.setIn(byteStream);
         StudentVerwijderenMenuOption studentVerwijderen = new StudentVerwijderenMenuOption();

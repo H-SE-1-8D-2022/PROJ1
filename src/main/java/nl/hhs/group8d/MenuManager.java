@@ -77,14 +77,14 @@ public class MenuManager {
 
                 //See if the answer is inbetween the actual posible answers.
                 if (answer > currentMenu.getMenuOptions().size() || answer < 0) {
-                    System.out.println("Please enter a valid number.");
+                    System.out.println("Vul alstublieft een geldig getal in.");
                 } else {
                     // Stop de loop
                     noValidAnswer = false;
                 }
             } catch (InputMismatchException e) {
                 //input mismatch exception means they put text in the input but we're looking for ints so the input mismatches the expected outcome.
-                System.out.println("Please enter a valid number.");
+                System.out.println("Vul alstublieft een geldig getal in.");
                 scanner.nextLine();
             }
         }
