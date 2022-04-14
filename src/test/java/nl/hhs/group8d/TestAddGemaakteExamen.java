@@ -45,13 +45,10 @@ public class TestAddGemaakteExamen {
 
     @Test
     public void addGemaaktExamen_bestandCreatie(){
-        //Arrange
         ExamenResultaten examenResultaat = new ExamenResultaten(student, testExamen, 1);
 
-        //Act
         student.addGemaakteExamen(examenResultaat);
 
-        //Assert
         Assertions.assertTrue(bestand.exists());
     }
 
@@ -61,12 +58,10 @@ public class TestAddGemaakteExamen {
      */
     @Test
     public void addGemaaktExamen_naarBestandSchrijven(){
-        //Arrange
         ExamenResultaten examenResultaat = new ExamenResultaten(student, testExamen, 1);
         int actualResult = 0;
         int expectedResult = 1;
 
-        //Act
         student.addGemaakteExamen(examenResultaat);
         try (BufferedReader in = new BufferedReader(new FileReader("Studentenlijst/" + student.getstudentNummer() + ".txt"))) {
             while ((in.readLine()) != null) {
@@ -76,7 +71,6 @@ public class TestAddGemaakteExamen {
             e.printStackTrace();
         }
 
-        //Assert
         Assertions.assertEquals(expectedResult, actualResult);
 
     }
